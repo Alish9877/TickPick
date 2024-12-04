@@ -1,6 +1,8 @@
 # TickPick
 - TickPick is a web-based event ticketing system designed to simplify the process of purchasing and managing event tickets. Built using Node.js, the platform provides users with an intuitive interface to browse, select, and purchase tickets for various events.
 
+# ERD 
+![ERD page](./TickPick.png)
 
 ## User Stories
 

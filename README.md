@@ -98,3 +98,5 @@ _After the user select on of the events it will show to the user this page:_
 ![profile page](./profile.png)
 
 > Note: if the user click on edit button it will allow the user to edit the details.
+
+![wireframe](./wireframe.png)

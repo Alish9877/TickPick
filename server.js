@@ -23,7 +23,9 @@ mongoose.connection.on('connected' , () => {
 // Middlewares
 app.use(morgan('dev'))
 
-
+app.get('/', (req,res)=>{
+  res.render('index.ejs')
+})
 
 
 

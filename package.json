@@ -1,0 +1,22 @@
+{
+  "name": "tickpick",
+  "version": "1.0.0",
+  "description": "- TickPick is a web-based event ticketing system designed to simplify the process of purchasing and managing event tickets. Built using Node.js, the platform provides users with an intuitive interface to browse, select, and purchase tickets for various events.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.8.3",
+    "morgan": "^1.10.0"
+  }
+}

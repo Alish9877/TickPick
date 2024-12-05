@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tickpick</title>
+</head>
+<body>
+  <h1>Create New Account</h1>
+  <p>Already Registered? <a href="/auth/log-in">Login</a></p>
+  
+  <form action="/auth/sign-up" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="username" id="username">
+    <label for="password">password</label>
+    <input type="text" name="password" id="password">
+    <label for="confirmPassword">confirm password</label>
+    <input type="text" name="confirmPassword" id="confirmPassword"><br>
+    <button type="submit">Sign Up</button>
+  </form>
+</body>
+</html>

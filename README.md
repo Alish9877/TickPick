@@ -51,7 +51,7 @@ Entity relationship diagrams (ERDs) are a way to describe the data that will be 
 
 **First page:**
 
-![First page](./First%20page.png)
+![First page](./firstpage.png)
 
 **Second page:**
 
@@ -63,7 +63,7 @@ _if the user sign in or sign up it will sow to the user this page:_
 
 _To Create new account page:_
 
-![Create new account page](./create%20new%20account.png)
+![Create new account page](./Fpage.png)
 
 > Note: if the user click on sign up it will show the user this page.
 

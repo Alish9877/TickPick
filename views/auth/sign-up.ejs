@@ -7,15 +7,15 @@
 </head>
 <body>
   <h1>Create New Account</h1>
-  <p>Already Registered? <a href="/auth/log-in">Login</a></p>
+  <p>Already Registered? <a href="/auth/sign-in">Login</a></p>
   
-  <form action="/auth/sign-up" method="post">
+  <form action="/auth/sign-in" method="post">
     <label for="name">Name</label>
     <input type="text" name="username" id="username">
     <label for="password">password</label>
-    <input type="text" name="password" id="password">
+    <input type="password" name="password" id="password">
     <label for="confirmPassword">confirm password</label>
-    <input type="text" name="confirmPassword" id="confirmPassword"><br>
+    <input type="password" name="confirmPassword" id="confirmPassword"><br>
     <button type="submit">Sign Up</button>
   </form>
 </body>

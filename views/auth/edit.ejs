@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Profile</title>
+</head>
+<body>
+  <h1>Edit Profile</h1>
+  <form action="/auth/profile.ejs?_METHOD=PUL" method="post">
+    <label>New Username:</label>
+    <input type="text" name="newUsername" id="newUsername" value="<%= user.username %>">
+
+    <label for="password">Old Password</label>
+    <input type="password" name="oldPassword" id="oldPassword">
+
+    <label for="newPassword">newPassword</label>
+    <input type="password" name="newPassword" id="newPassword">
+
+    <label for="img">Profile Image</label>
+    <input type="file" id="img" name="img" value="<%= user.img.url %>">
+
+    <button type="submit">Update Profile</button>
+  </form>
+</body>
+</html>

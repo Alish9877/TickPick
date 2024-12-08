@@ -9,19 +9,22 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true
   },
-Role : {
-  type: String,
-  require: true
+  role: {
+    type: String,
+    default: 'guest', // Default role
 },
-img : {
-        data: Buffer,
-        contentType: String
-},
-ticketId: {
+  img: {
+    data: Buffer,
+    contentType: String,
+    url: {
+        type: String,
+        default: 'https://static-00.iconduck.com/assets.00/profile-circle-icon-1023x1024-ucnnjrj1.png', // Default image URL
+    }},
+  ticketId: {
   type: mongoose.Schema.Types.ObjectId,
   ref: 'Ticket'
-},
-}, {
+}}, 
+{
   timestamps: true // createdAt and updatedAt
 });
 

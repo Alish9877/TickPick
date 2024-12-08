@@ -1,5 +1,12 @@
 <body>
   <%- include('../partials/_navbar.ejs') %>
   <h1>new Events</h1>
-  
+  <p>View more events by ...</p>
+  <a href="../categories/index.ejs">Categories</a>
+  <h2>Recently Events</h2>
+  <ul><% events.forEach(event) %> 
+    <li>
+      event.eventname
+    </li>
+  </ul>
 </body>

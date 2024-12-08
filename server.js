@@ -9,9 +9,12 @@ const session = require('express-session')
 const passUsertoView = require('./middleware/pass-user-to-views')
 const isSignedIn = require('./middleware/is-signed-in')
 
-// require controllers 
+
+// require controllers
 const authCtrl = require('./controller/auth')
 const categoriesCtrl = require('./controller/categories')
+const eventCtrl = require('./controller/events')
+
 
 
 const PORT = process.env.PORT ? process.env.PORT : '3000'
@@ -32,18 +35,14 @@ app.use(session({
   saveUninitialized : true
 }))
 
-// app.use(passUsertoView)
+app.use('/auth', authCtrl)
+app.use('/categories', categoriesCtrl)
+app.use('/events' , eventCtrl)
 
 // root route
 app.get('/' , async (req,res) => {
   res.render('index.ejs')
   })
-
-// use controller 
-app.use('/auth', authCtrl)
-app.use('/categories', categoriesCtrl)
-
-// app.use(express.static('public'));
 
 
 // vip lounge
@@ -54,3 +53,5 @@ res.send(`Welcome to the party ${req.session.user.username}`)
 app.listen(PORT , () => {
   console.log(`Listening on port ${PORT}`)
 })
+
+

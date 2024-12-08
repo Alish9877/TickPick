@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const Event = require('../models/event');
-const Event = require('../models/categories');
+// const Category = require('../models/categories');
 
 router.get('/' , async (req,res) => {
   try { const events = await Event.find({}).populate('CategoryId')
@@ -12,3 +12,5 @@ catch (error){
   res.redirect('/')
 }
 })
+
+module.exports = Event

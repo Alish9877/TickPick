@@ -6,7 +6,15 @@
   <title>profile</title>
 </head>
 <body>
-  <h1>User Profile</h1>
-  <img src="<%=  %>" alt="">
+  <div>
+    <strong>Profile Image:</strong><br>
+    <img src="<%= user.img.url %>" alt="Profile Image" style="max-width: 200px; border-radius: 50%;">
+</div>
+  <div class="right">
+    <h1><%= user.username%> Profile</h1>
+    <p><strong>Username</strong> <%= user.username %></p>
+    <a href="/auth/edit">Edit Profile</a>
+  </div>
+
 </body>
 </html>

@@ -58,8 +58,30 @@ router.get('/sign-out' , (req,res) => {
 })
 
 //profile
-router.get('/profile',async(req,res)=>{
-  res.render('auth/profile.ejs')
+router.get('/profile', async (req, res) => {
+    try {
+        const user = await User.findById(req.session.user._id);
+        if (!user) {
+            return res.send('User not found');
+        }
+        //the render
+        res.render('auth/profile.ejs', { user });
+    } catch (error) {
+        console.error(error);
+    }
+});
+
+router.get('/edit', async(req,res)=>{
+  try {
+    const user = await User.findById(req.session.user._id);
+    if (!user) {
+        return res.send('User not found');
+    }
+    //the render
+    res.render('auth/edit.ejs', { user });
+} catch (error) {
+    console.error(error);
+}
 })
 
 

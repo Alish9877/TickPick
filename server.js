@@ -8,8 +8,12 @@ const morgan = require('morgan')
 const session = require('express-session')
 const passUsertoView = require('./middleware/pass-user-to-views')
 const isSignedIn = require('./middleware/is-signed-in')
+
 // require controllers 
 const authCtrl = require('./controller/auth')
+const categoriesCtrl = require('./controller/categories')
+
+
 const PORT = process.env.PORT ? process.env.PORT : '3000'
 
 mongoose.connect(process.env.MONGODB_URI)
@@ -37,6 +41,7 @@ app.get('/' , async (req,res) => {
 
 // use controller 
 app.use('/auth', authCtrl)
+app.use('/categories', categoriesCtrl)
 
 // app.use(express.static('public'));
 

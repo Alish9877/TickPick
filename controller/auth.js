@@ -1,10 +1,17 @@
 const User = require('../models/user')
 const bcrypt = require('bcrypt')
 const router = require('express').Router()
+const Categories = require('../controller/categories')
+
+
+
 
 router.get('/sign-up' , (req,res) => {
 res.render('auth/sign-up.ejs')
 })
+
+router.use('/categories', Categories)
+
 
 router.post('/sign-up' , async (req,res) => {try {
   const UserInDataBase = await User.findOne({username: req.body.username})
@@ -42,7 +49,7 @@ router.post('/sign-in' , async(req,res) => {
     username: UserInDataBase.username,
     _id : UserInDataBase._id
   }
-  res.redirect('/')
+  res.redirect('/categories')
 })
 
 router.get('/sign-out' , (req,res) => {

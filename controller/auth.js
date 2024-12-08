@@ -57,4 +57,12 @@ router.get('/sign-out' , (req,res) => {
   res.redirect('/')
 })
 
+//profile
+router.get('/profile',async(req,res)=>{
+  res.render('auth/profile.ejs')
+})
+
+
+
+
 module.exports = router

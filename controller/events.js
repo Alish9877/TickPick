@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const adminAuth = require('../middleware/adminauth');
+const insureadmin = require('../middleware/insureadmin')
 const Event = require('../models/event');
 // const Category = require('../models/categories');
 
@@ -28,22 +28,22 @@ else if (event.tickCount > 0)
 await event.save
 })
 
-router.get('/admin/add'  ,(req,res) => {
+router.get('/admin/add' , insureadmin ,(req,res) => {
   res.render('addEvent')
 })
 
-router.post('/events'  , async(req,res) => {
+router.post('/events' , insureadmin , async(req,res) => {
   const newevent = await event.findById(req.session.event._id)
   newevent.event.push(req.body)
   await newevent.save()
 })
 
-router.get('/admin/edit/:eventId'  , async(req,res) => {
+router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
   const event = await Event.findById(req.params.eventId)
   res.render('editEvent' , {event})
 })
 
-router.post('/admin/edit/:eventId'  , async(req,res) => {
+router.post('/admin/edit/:eventId', insureadmin  , async(req,res) => {
 try {
   await Event.findByIdAndUpdate(req.params.eventId , req,body)
   res.redirect('/events')
@@ -53,7 +53,7 @@ catch (error) {
 }
 })
 
-router.post('/events/delete/:eventId' , adminAuth , async(req,res) => {
+router.post('/events/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)
     Event.save()

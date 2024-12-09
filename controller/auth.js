@@ -126,7 +126,7 @@ router.put('/update/:userId', async (req, res) => {
     const oldPassword = req.body.oldPassword
 
     // Check if the real password similar to inputed password
-    const isSimilar = bcrypt.compareSync(oldPassword, user.password);
+    const isSimilar = bcrypt.compareSync(oldPassword, user.password)
     
     if (!isSimilar) {
       res.send('Old Password is Incorrect')
@@ -151,8 +151,16 @@ router.put('/update/:userId', async (req, res) => {
     console.log(req.body)
     res.redirect('/auth/profile')
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
 });
 
 module.exports = router
+
+router.delete('/:userId', async (req, res) => {
+  const user = await User.findById(req.params.userId)
+  console.log(user)
+  await user.deleteOne()
+  res.redirect('/')
+  
+})

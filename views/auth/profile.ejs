@@ -14,6 +14,10 @@
     <h1><%= user.username%> Profile</h1>
     <p><strong>Username</strong> <%= user.username %></p>
     <a href="/auth/edit">Edit Profile</a>
+    
+    <form action="/auth/<%= user._id %>?_method=DELETE" method="post">
+      <button type="submit">Delete Account</button>
+    </form>
   </div>
 
 </body>

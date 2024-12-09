@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>profile</title>
+</head>
+<body>
+  <div>
+    <strong>Profile Image:</strong><br>
+    <img src="<%= user.img.url %>" alt="Profile Image" style="max-width: 200px; border-radius: 50%;">
+</div>
+  <div class="right">
+    <h1><%= user.username%> Profile</h1>
+    <p><strong>Username</strong> <%= user.username %></p>
+    <a href="/auth/edit">Edit Profile</a>
+  </div>
+
+</body>
+</html>

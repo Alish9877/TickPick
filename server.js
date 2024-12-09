@@ -20,6 +20,9 @@ const eventCtrl = require('./controller/events')
 
 const PORT = process.env.PORT ? process.env.PORT : '3000'
 
+//for style
+const path = require('path');
+
 mongoose.connect(process.env.MONGODB_URI)
 
 mongoose.connection.on('connected' , () => {
@@ -30,6 +33,10 @@ mongoose.connection.on('connected' , () => {
 app.use(express.urlencoded({extended : false}))
 app.use(methodOverride('_method'))
 app.use(morgan('dev'))
+
+//style
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use(session({
   secret: process.env.SESSION_SECRET,
   resave: false,
@@ -54,5 +61,3 @@ res.send(`Welcome to the party ${req.session.user.username}`)
 app.listen(PORT , () => {
   console.log(`Listening on port ${PORT}`)
 })
-
-

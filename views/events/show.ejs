@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikPik</title>
+  </head>
+  <body>
+    <h2>Comments Section</h2>
+    <ul>
+      <% comments.forEach(comment => { %>
+      <>
+        <strong><%= comment.username %></strong>: <%= comment.discription %>
+      <% }); %>
+    </ul>
+    <form action="/comments" method="POST">
+      <label>
+        Comment:
+        <textarea name="discription" id="discription" required></textarea>
+      </label>
+      <br />
+      <button type="submit">Add Comment</button>
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+

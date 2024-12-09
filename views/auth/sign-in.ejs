@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>sign in</title>
     <link rel="stylesheet" href="../../stylesheets/style.css">
+
   </head>
   <body>
     <div class="signin-container">
+      <%- include('../partials/_nav.ejs') %>
       <h1>Sign In</h1>
       <form action="/auth/sign-in" method="POST">
         <label>Username:</label>

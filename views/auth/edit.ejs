@@ -7,9 +7,10 @@
 </head>
 <body>
   <h1>Edit Profile</h1>
-  <form action="/auth/profile.ejs?_METHOD=PUL" method="post">
+  <form action="/auth/update/<%= user._id%>?_method=PUT" method="post">
+    <img src="<%= user.img.url %>" style="max-width: 200px; border-radius: 50%;"/> <br>
     <label>New Username:</label>
-    <input type="text" name="newUsername" id="newUsername" value="<%= user.username %>">
+    <input type="text" name="username" id="newUsername" value="<%= user.username %>">
 
     <label for="password">Old Password</label>
     <input type="password" name="oldPassword" id="oldPassword">
@@ -18,7 +19,7 @@
     <input type="password" name="newPassword" id="newPassword">
 
     <label for="img">Profile Image</label>
-    <input type="file" id="img" name="img" value="<%= user.img.url %>">
+    <input type="url" id="img" name="img" value="<%= user.img.url %>">
 
     <button type="submit">Update Profile</button>
   </form>

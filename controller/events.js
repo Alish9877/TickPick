@@ -14,8 +14,10 @@ const Event = require('../models/event');
 // })
 router.get('/' , async(req,res) => {
   const events = await Event.find()
+  console.log(events)
 res.render('events/index.ejs',{events})
 })
+
 router.get('/reserve/:eventId', async(req,res) =>{
 const event = await Event.findById(req.params.eventId)
 if (event.tickCount <= 0)

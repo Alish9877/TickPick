@@ -151,28 +151,58 @@ input[type=text], input[type=password], input[type=url]{
   
 }
 
+/* category page */
+/* Category list styles */
+.category-list {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  padding: 20px; 
+}
 
-.category-list{
+/* Category button styles */
+.category-button {
+  background-color: white;
+  border: none; 
+  border-radius: 5px; 
+  margin: 20px; 
+  cursor: pointer;
+  
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-
+  flex-direction: column; /*important line*/
+  align-items: center;  /*important line*/
+  text-align: center;
+  width: 20em; 
+  height: auto;
+  box-shadow: 2px 2px 5px gray; 
 }
 
-.category-list > figure {
-  margin: 25px;
-  text-align: center; 
+/* category img style */
+.category-button img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 15em;
+  
 }
 
-.category-list > figure > img{
-  width: 15em;
-  height: 10em;
-}
-
-figcaption {
+/* category text */
+.category-button figcaption {
+  margin: 10px 0;
   font-weight: bold;
-  color: #22177a
+  color:#22177a; 
+}
+
+/* Hover effects for buttons */
+.category-button:hover {
+  box-shadow: 2px 2px 20px rgba(17, 10, 151, 0.685);
+}
+
+/* for smaller screens */
+@media (max-width: 600px) {
+  .category-button {
+      width: 100%; 
+      max-width: 300px;
+  }
 }
 
 
@@ -259,30 +289,96 @@ figcaption {
 
 /* //navigation */
 .nav {
+  display: flex; 
   background-color: #4b598e; 
-  padding: 5px;
-  text-align: right; /* Align links to the right */
-  padding: 10px;
+  padding: 5px 20px; 
+  box-shadow: 0 2px 5px #0a03524b;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
+/* the page title */
+.toleft {
+  display: flex;
+  align-items: center;
+}
 
+/* other links + img */
+.toRight {
+  display: flex;
+  align-items: center; 
+  margin-left: auto;
+}
 
-.nav a {
+.toleft a, .toRight a {
   color: white;
   text-decoration: none;
+  margin: 0 5px; 
   font-weight: bold;
-  align-items: center;
-  float: right;
+ 
 }
 
-
-.nav-img{
-  max-width:2em;
-  height: auto;
-  border-radius: 50%;  
+.toleft a:hover, .toRight a:hover {
+  color: #eae2ff;
 }
 
-.toRight{
-  float: left;
+/* Profile image styling */
+.nav-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  margin-right: 30px; /* Space between image and text */
 }
 
+/* for smaller screens */
+@media (max-width: 600px) {
+  .nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .toleft, .toRight {
+      flex-direction: column; 
+      /* margin-bottom: 10px;  */
+  }
+}/*end of media*/
+
+
+/* Event index page */
+.event-header{
+  background-image:url("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/05/1200/675/HeavenCome3.jpg?ve=1&tl=1") ;
+  color: white;
+  text-align: center;
+}
+
+.event-header-info{
+  margin: 20px 10px;
+  float:right;
+  padding: 0 200px 0 0;
+  
+}
+
+.event-header-info > a{
+  border: 5px solid #ffffff;
+  background-color: white;
+  padding: 5px 50px;
+}
+
+h2 {
+  text-align: center; /* Center align */
+}
+
+ul {
+  list-style-type: none; 
+  
+}
+
+li {
+  background-color: white;
+  margin: 10px;
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(69, 56, 119, 0.667); 
+  text-align: center;
+  list-style: none;
+}

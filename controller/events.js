@@ -33,12 +33,35 @@ router.get('/new' , insureadmin ,(req,res) => {
 })
 
 
-router.post('/' , insureadmin , async(req,res) => {
-  const newevent = await Event.findById(req.session.event._id)
-  newevent.event.push(req.body)
-  await newevent.save()
-  res.redirect(`/event/new`)
-})
+// router.post('/' , insureadmin , async(req,res) => {
+//   const newevent = await Event.findById(req.session.user._id)
+//   newevent.event.push(req.body)
+//   await newevent.save()
+//   res.redirect('/events')
+// })
+
+router.post('/', insureadmin, async (req, res) => {
+  try {
+    // Create a new event, set the data passed in req.body
+    const newEvent = new Event({
+      eventname: req.body.eventname,
+      Date: req.body.Date,
+      tickCount: req.body.tickCount,
+      userId: req.session.user._id,
+      tickPrice: req.body.tickPrice
+    });
+
+    // Save the new event
+    await newEvent.save();
+
+    // Redirect to events list after creation
+    res.redirect('/events');
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error creating event');
+  }
+});
+
 
 router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
   const event = await Event.findById(req.params.eventId)
@@ -69,3 +92,4 @@ router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
 
 
 module.exports = router
+

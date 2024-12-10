@@ -46,7 +46,8 @@ router.post('/sign-in' , async(req,res) => {
   }
   req.session.user = {
     username: UserInDataBase.username,
-    _id : UserInDataBase._id
+    _id : UserInDataBase._id,
+    role : UserInDataBase.role
   }
   res.redirect('/categories')
 })

@@ -8,6 +8,7 @@ const morgan = require('morgan')
 const session = require('express-session')
 const passUsertoView = require('./middleware/pass-user-to-views')
 const isSignedIn = require('./middleware/is-signed-in')
+const insureadmin = require('./middleware/insureadmin')
 
 
 // require controllers
@@ -51,7 +52,6 @@ app.use('/events' , eventCtrl)
 app.get('/' , async (req,res) => {
   res.render('index.ejs')
   })
-
 
 // vip lounge
 app.get('/vip-lounge' , isSignedIn , (req,res) => {

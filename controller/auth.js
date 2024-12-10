@@ -158,7 +158,9 @@ module.exports = router
 
 router.delete('/:userId', async (req, res) => {
   const user = await User.findById(req.params.userId)
+
   console.log(user)
+  
   await user.deleteOne()
   res.redirect('/')
 })

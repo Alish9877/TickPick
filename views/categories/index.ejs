@@ -9,7 +9,14 @@
 <body>
   <!-- //nav -->
 <div class="nav">
-    <a href="/auth/profile">My Profile</a>
+    <% 
+        if(user){%>
+            <a href="/auth/profile"><img src="<%= user.img.url%>" class="nav-img"/></a>
+            <a href="/auth/sign-out">Sign out</a>  
+        <%}    
+    %>
+    <a href="/categories" class="toRight">TickPic</a>
+    
     <a href="/events">Events</a>
 </div>
 <!-- nav end -->

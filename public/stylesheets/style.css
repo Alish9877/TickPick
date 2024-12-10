@@ -133,7 +133,7 @@ form > button:hover {
   background-color: #4b4e8a; 
 }
 
-input[type=text], input[type=password]{
+input[type=text], input[type=password], input[type=url]{
   height: 2em;
   
 }
@@ -256,5 +256,17 @@ figcaption {
   text-decoration: none;
   margin-left: 20px; /* Spacing between links */
   font-weight: bold;
+}
+
+.toRight{
+  float: left;
+}
+
+.nav-img{
+  margin-top: 10px;
+  width:1.5em;
+  padding: 0;
+  border-radius: 50%;
+align-items: center;
 }
 

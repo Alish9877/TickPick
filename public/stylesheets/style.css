@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #e9e9ef;
   color: #22177a;
   font-family: 'Poppins', sans-serif;
@@ -8,8 +8,7 @@ body{
   width: 100%;
 }
 
-a{
-
+a {
   text-decoration: none;
   font-size: 1em;
   padding: 8px 0;
@@ -18,12 +17,12 @@ a{
   text-align: center;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
 .text-container {
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg");
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -33,7 +32,6 @@ h1{
   text-align: center;
   opacity: 0.8;
 }
-
 
 .main-header {
   display: flex;
@@ -54,7 +52,6 @@ h1{
 }
 
 .index-container {
-  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,7 +68,7 @@ h1{
   height: 100%;
 }
 
-.auth-links > a{
+.auth-links > a {
   margin: 20px 10px;
   color: #ffffff;
   background-color: #605ea1;
@@ -81,14 +78,11 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.auth-links > a:hover{
+.auth-links > a:hover {
   background-color: #333265;
 }
-
-
 
 /* Sign-in Container */
 
@@ -111,7 +105,8 @@ max-width: 100%;
 
 }
 
-.signin-container, .signup-container{
+.signin-container,
+.signup-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,10 +125,10 @@ form {
   border-radius: 20px;
   color: #4b598e;
   font-weight: bold;
-  background-color: white;  
+  background-color: white;
 }
 
-form > button{
+form > button {
   background-color: #605ea1;
   color: white;
   border: none;
@@ -143,62 +138,61 @@ form > button{
 }
 
 form > button:hover {
-  background-color: #4b4e8a; 
+  background-color: #4b4e8a;
 }
 
+
+input[type='text'],
+input[type='password'] {
 input[type=text], input[type=password], input[type=url]{
   height: 2em;
-  
 }
 
-
-.category-list{
+.category-list {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-
 }
 
 .category-list > figure {
   margin: 25px;
-  text-align: center; 
+  text-align: center;
 }
 
-.category-list > figure > img{
+.category-list > figure > img {
   width: 15em;
   height: 10em;
 }
 
 figcaption {
   font-weight: bold;
-  color: #22177a
+  color: #22177a;
 }
-
 
 /* //profile */
 .profile-container {
-  max-width: 600px; 
-  margin: 50px auto; 
+  max-width: 600px;
+  margin: 50px auto;
   padding: 20px;
   background-color: white;
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center; 
+  text-align: center;
 }
 
 .profile-img img {
-  width: 150px; 
-  height: 150px; 
-  border-radius: 50%; 
-  border: 3px solid #4b598e; 
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #4b598e;
   margin-bottom: 20px;
 }
 
 .profile-info h1 {
   font-size: 24px;
-  color: #4b598e; 
-  margin: 10px 0; 
+  color: #4b598e;
+  margin: 10px 0;
 }
 
 .profile-info p {
@@ -240,22 +234,20 @@ figcaption {
   background-color: #c0392b; 
 }
 
-
 /* //edit profile */
 .edit-profile-container {
   display: flex;
   border-radius: 10px;
-  text-align: center; 
+  text-align: center;
   justify-content: center;
   margin-top: 40px;
 }
 .edit-img img {
-  max-width: 200px; 
-  border-radius: 50%; 
+  max-width: 200px;
+  border-radius: 50%;
   border: 3px solid #4b598e;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
-
 
 /* //navigation */
 .nav {
@@ -286,3 +278,4 @@ figcaption {
   float: left;
 }
 
+/* show.ejs */

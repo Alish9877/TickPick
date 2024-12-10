@@ -51,4 +51,50 @@ router.get('/my-comments', async (req, res) => {
   }
 })
 
+router.delete('/my-comments/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+
+    const comment = await Comment.findById(id)
+
+    await comment.deleteOne()
+
+    res.redirect('/comments/my-comments')
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
+
+router.get('/my-comments/:commentId/edit', async (req, res) => {
+  try {
+    const comment = await Comment.findById(req.params.commentId).populate(
+      'userId',
+      'username'
+    )
+
+    res.render('events/edit-comment.ejs', { comment })
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
+
+router.put('/my-comments/:id/edit', async (req, res) => {
+  try {
+    const { id } = req.params
+    const { discription } = req.body
+
+    const comment = await Comment.findById(id)
+
+    comment.discription = discription
+
+    await comment.save()
+
+    res.redirect('/comments/my-comments')
+  } catch (error) {
+    console.log(error)
+    res.redirect('/')
+  }
+})
 module.exports = router

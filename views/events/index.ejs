@@ -7,32 +7,48 @@
   <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-  <h1>New Events</h1>
-  <p>View more events by ...</p>
-  <a href="../categories/">Categories</a>
+  <!-- Nav start -->
+<div class="nav">
+  <div class="toleft">
+    <a href="/events">TickPic</a>
+  </div>
+  <div class="toRight">
+    <a href="/categories">Categories</a>
+    <% if(user){%>
+      <a href="/auth/profile">My Profile</a>
+      <a href="/auth/sign-out">Sign out</a>  
+      <%}%>
+        
+  </div>
+  
+        
+      </div>
+
+</div>
+
+<!-- nav end-->
+  <div class="event-header">
+    <div class="event-header-info">
+      <h1>New Events</h1>
+      <p>View more events by ...</p>
+      <a href="../categories/">Categories</a>
+      </div>
+    </div>
+  
+  
   <% if (user.role == 'admin') { %> 
   <a href="/events/new">Add new</a>
   <%} %>
   <!-- <a href="/events/new">Add Event</a>  -->
-  <h2>Recently Events</h2>
-  <div>
-    <caption>
-      <img src="https://www.mississaugasymphony.ca/wp-content/uploads/2024/08/used-book-sale-1024x688-1.jpg" alt="books">
-      <figcaption>Books</figcaption>
-      <button type="submit" >Join Now</button>
-    </caption>
+  <h2>Recent Events</h2>
+  
+    <% 
+        events.sort((a, b) => new Date(a.Date) - new Date(b.Date));
+      events.forEach(event => {%>
+        <li><%= event.eventname %>, <%= event.Date.toISOString().split('T')[0]%></li>
+      <%});
+    %>
 
-    <caption>
-      <img src="https://cdn.prod.website-files.com/60754790876509970970cb53/629e7fa03c908d01d15b1f65_DJI_0179-1200w.jpg" alt="cats">
-      <figcaption>Cars</figcaption>
-      <button type="submit" >Join Now</button>
-    </caption>
 
-    <caption>
-      <img src="https://www.alliedmarketresearch.com/blog/Blog_banner_image/ctoykrzsmv.jpeg" alt="music">
-      <figcaption>Music</figcaption>
-      <button type="submit" >Join Now</button>
-    </caption>
-    </div>
 </body>
 </html>

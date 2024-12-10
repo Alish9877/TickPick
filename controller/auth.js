@@ -49,7 +49,7 @@ router.post('/sign-in', async (req, res) => {
     _id: UserInDataBase._id,
     role: UserInDataBase.role
   }
-  res.redirect('/categories')
+  res.redirect('/events')
 })
 
 router.get('/sign-out', (req, res) => {
@@ -159,9 +159,7 @@ module.exports = router
 
 router.delete('/:userId', async (req, res) => {
   const user = await User.findById(req.params.userId)
-
-  console.log(user)
-  
-  await user.deleteOne()
   res.redirect('/')
+  await user.deleteOne()
+
 })

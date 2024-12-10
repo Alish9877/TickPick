@@ -2,33 +2,58 @@
 <html>
 <head>
   <title>Add Event</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
 <body>
-  <h1>Add New Event</h1>
-  <form action="/events" method="POST">
-    <label for="eventname">Event Name:</label>
-    <input type="text" name="eventname" id="eventname" required>
+   <!-- Nav start -->
+<div class="nav">
+  <div class="toleft">
+    <a href="/events">TickPic</a>
+  </div>
+  <div class="toRight">
+    <a href="/categories">Categories</a>
+    <% if(user){%>
+      <a href="/auth/profile">My Profile</a>
+      <a href="/auth/sign-out">Sign out</a>  
+      <%}%>
+        
+  </div>
   
-    <label for="Date">Event Date:</label>
-    <input type="date" name="Date" id="Date" required>
-  
-    <label for="tickCount">Ticket Count:</label>
-    <input type="number" name="tickCount" id="tickCount" required>
-  
-    <label for="tickPrice">Ticket Price:</label>
-    <input type="number" name="tickPrice" id="tickPrice" required>
-    <label for="Categories">Category:</label>
-    <select id="Category" name="Category">
-      <option value="Books">Books</option>
-      <option value="cars">Cars</option>
-      <option value="Music">Music</option>
-      <option value="Festivals">Festivals</option>
-      <option value="Sports">Sports</option>
-      <option value="Comedy">Comedy</option>      
-    </select>
-    <br>
+        
+      </div>
 
-    <button type="submit">Add Event</button>
-  </form>
+</div>
+
+<!-- nav end-->
+
+  <div class="edit-profile-container">
+    <form action="/events" method="POST">
+      <h1>Add New Event</h1>
+      <br>
+      <label for="eventname">Event Name:</label>
+      <input type="text" name="eventname" id="eventname" required>
+    
+      <label for="Date">Event Date:</label>
+      <input type="date" name="Date" id="Date" required>
+    
+      <label for="tickCount">Ticket Count:</label>
+      <input type="number" name="tickCount" id="tickCount" required>
+    
+      <label for="tickPrice">Ticket Price:</label>
+      <input type="number" name="tickPrice" id="tickPrice" required>
+      <label for="Categories">Category:</label>
+      <select id="Category" name="Category">
+        <option value="Books">Books</option>
+        <option value="cars">Cars</option>
+        <option value="Music">Music</option>
+        <option value="Festivals">Festivals</option>
+        <option value="Sports">Sports</option>
+        <option value="Comedy">Comedy</option>      
+      </select>
+      <br>
+  
+      <button type="submit">Add Event</button>
+    </form>
+  </div>
 </body>
 </html>

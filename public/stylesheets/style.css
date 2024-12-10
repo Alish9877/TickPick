@@ -246,16 +246,17 @@ figcaption {
 
 /* //navigation */
 .nav {
-  background-color: #4b598e; /* Darker background for navbar */
-  padding: 10px;
+  background-color: #4b598e; 
+  padding: 20px;
   text-align: right; /* Align links to the right */
 }
 
 .nav a {
   color: white;
   text-decoration: none;
-  margin-left: 20px; /* Spacing between links */
+  margin: 0 20px;
   font-weight: bold;
+  align-items: center;
 }
 
 .toRight{
@@ -263,10 +264,9 @@ figcaption {
 }
 
 .nav-img{
-  margin-top: 10px;
-  width:1.5em;
+  width:2em;
   padding: 0;
   border-radius: 50%;
-align-items: center;
+
 }
 

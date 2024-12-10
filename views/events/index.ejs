@@ -1,13 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikPick</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
 <body>
-  <h1>new Events</h1>
+  <h1>New Events</h1>
   <p>View more events by ...</p>
   <a href="../categories/">Categories</a>
-  <a href="/events/new">Add Event</a> 
+  <% if (user.role == 'admin') { %> 
+  <a href="/events/new">Add new</a>
+  <%} %>
+  <!-- <a href="/events/new">Add Event</a>  -->
   <h2>Recently Events</h2>
-   <ul><% events.forEach(Event) %> 
-    <li>
-      <strong><%=Event.eventname%></strong> - <%=Event.Date%>
-      <a href="/reserve/<%=Event._id%>">Event</a>
-    </li>
-  </ul>
+  <div>
+    <caption>
+      <img src="https://www.mississaugasymphony.ca/wp-content/uploads/2024/08/used-book-sale-1024x688-1.jpg" alt="books">
+      <figcaption>Books</figcaption>
+      <button type="submit" >Join Now</button>
+    </caption>
+
+    <caption>
+      <img src="https://cdn.prod.website-files.com/60754790876509970970cb53/629e7fa03c908d01d15b1f65_DJI_0179-1200w.jpg" alt="cats">
+      <figcaption>Cars</figcaption>
+      <button type="submit" >Join Now</button>
+    </caption>
+
+    <caption>
+      <img src="https://www.alliedmarketresearch.com/blog/Blog_banner_image/ctoykrzsmv.jpeg" alt="music">
+      <figcaption>Music</figcaption>
+      <button type="submit" >Join Now</button>
+    </caption>
+    </div>
 </body>
+</html>

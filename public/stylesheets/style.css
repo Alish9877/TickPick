@@ -219,25 +219,25 @@ figcaption {
 }
 
 .edit-profile:hover {
-  background-color: #4b4e8a; /* Darker shade on hover */
+  background-color: #4b4e8a; 
 }
 
 .delete-account-form {
-  margin-top: 20px; /* Space above the delete form */
+  margin-top: 20px; 
 }
 
 .delete-account {
-  padding: 10px 20px; /* Padding inside the button */
-  background-color: #e74c3c; /* Delete button color */
-  color: white; /* Button text color */
-  border: none; /* Remove border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer on hover */
-  transition: background-color 0.3s; /* Smooth transition */
+  padding: 10px 20px; 
+  background-color: #e74c3c; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .delete-account:hover {
-  background-color: #c0392b; /* Darker shade on hover */
+  background-color: #c0392b; 
 }
 
 

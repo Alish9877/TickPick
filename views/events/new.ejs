@@ -5,15 +5,29 @@
 </head>
 <body>
   <h1>Add New Event</h1>
-  <form action="/Event/<%= event._id %>/events" method="POST">
-    <label>Name:</label>
-    <input type="text" name="name" required><br>
-    <label>Date:</label>
-    <input type="date" name="date" required><br>
-    <label>Price:</label>
-    <input type="number" name="price" required><br>
-    <label>Tickets:</label>
-    <input type="number" name="tickCount" required><br>
+  <form action="/events" method="POST">
+    <label for="eventname">Event Name:</label>
+    <input type="text" name="eventname" id="eventname" required>
+  
+    <label for="Date">Event Date:</label>
+    <input type="date" name="Date" id="Date" required>
+  
+    <label for="tickCount">Ticket Count:</label>
+    <input type="number" name="tickCount" id="tickCount" required>
+  
+    <label for="tickPrice">Ticket Price:</label>
+    <input type="number" name="tickPrice" id="tickPrice" required>
+    <label for="Categories">Category:</label>
+    <select id="Category" name="Category">
+      <option value="Books">Books</option>
+      <option value="cars">Cars</option>
+      <option value="Music">Music</option>
+      <option value="Festivals">Festivals</option>
+      <option value="Sports">Sports</option>
+      <option value="Comedy">Comedy</option>      
+    </select>
+    <br>
+
     <button type="submit">Add Event</button>
   </form>
 </body>

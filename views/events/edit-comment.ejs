@@ -1,0 +1,15 @@
+<body>
+  <form
+    action="/comments/my-comments/<%= comment._id %>/edit?_method=PUT"
+    method="POST"
+  >
+    <label>
+      Content:
+      <textarea name="discription" required>
+<%= comment.discription %></textarea
+      >
+    </label>
+    <br />
+    <button type="submit">Update Comment</button>
+  </form>
+</body>

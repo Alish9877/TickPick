@@ -51,6 +51,10 @@ app.use('/comments', commentsCtrl)
 app.get('/', async (req, res) => {
   res.render('index.ejs')
 })
+app.delete('/comments/my-comments/:commentsId', async (req, res) => {
+  await Comment.findByIdAndDelete(req.params.commentsId)
+  res.redirect('/comments')
+})
 
 // use controller
 app.use('/auth', authCtrl)

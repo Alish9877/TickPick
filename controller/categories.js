@@ -3,102 +3,111 @@ const router = express.Router()
 
 const User = require('../models/user')
 const Comment = require('../models/comment')
+const Categories = require('../models/category')
+
+//root
+router.get('/',async(req,res)=>{
+  const user = await User.findById(req.session.user._id)
+res.render('categories/index.ejs',{user})
+})
 
 // GET Route: Display comments
-router.get('/', async (req, res) => {
-  try {
-    const comments = await Comment.find({}).populate('userId', 'username')
-    res.render('events/show.ejs', { comments })
-  } catch (error) {
-    console.error('Error fetching comments:', error)
-    res.status(500).send('An error occurred while fetching comments.')
-  }
-})
+// router.get('/', async (req, res) => {
+//   try {
+//     const comments = await Comment.find({}).populate('userId', 'username')
+//     res.render('events/show.ejs', { comments })
+//   } catch (error) {
+//     console.error('Error fetching comments:', error)
+//     res.status(500).send('An error occurred while fetching comments.')
+//   }
+// })
 
 
-router.post('/', async (req, res) => {
-  try {
-    const newComment = {
-      discription: req.body.discription,
-      userId: req.session.user._id, // Ensure req.session.user._id exists
-      eventId: req.body.eventId
-    }
-    await Comment.create(newComment)
-    res.redirect('/comments')
-  } catch (error) {
-    console.error(error)
-    res.status(500).send('Error creating comment')
-  }
-//Root route
-router.get('/' , async(req,res) => {
-  const categories = await Categories.find()
-  const user = await User.findById(req.session.user._id)
-res.render('categories/index.ejs',{categories,user})
-})
+// router.post('/', async (req, res) => {
+//   try {
+//     const newComment = {
+//       discription: req.body.discription,
+//       userId: req.session.user._id, // Ensure req.session.user._id exists
+//       eventId: req.body.eventId
+//     }
+//     await Comment.create(newComment)
+//     res.redirect('/comments')
+//   } catch (error) {
+//     console.error(error)
+//     res.status(500).send('Error creating comment')
+//   }
+// })
 
-router.get('/my-comments', async (req, res) => {
-  try {
-    if (!req.session.user) {
-      return res
-        .status(401)
-        .send('Unauthorized: Please log in to view your comments.')
-    }
+// //Root route
+// router.get('/' , async(req,res) => {
+//   const categories = await Categories.find()
+//   const user = await User.findById(req.session.user._id)
+// res.render('categories/index.ejs',{categories,user})
+// })
 
-    const userId = req.session.user._id
-    const comments = await Comment.find({ userId }).populate(
-      'userId',
-      'username'
-    )
+// router.get('/my-comments', async (req, res) => {
+//   try {
+//     if (!req.session.user) {
+//       return res
+//         .status(401)
+//         .send('Unauthorized: Please log in to view your comments.')
+//     }
 
-    res.render('events/my-comments.ejs', { comments })
-  } catch (error) {
-    console.error('Error fetching user comments:', error)
-    res.status(500).send('An error occurred while fetching your comments.')
-  }
-})
+//     const userId = req.session.user._id
+//     const comments = await Comment.find({ userId }).populate(
+//       'userId',
+//       'username'
+//     )
 
-router.delete('/my-comments/:id', async (req, res) => {
-  try {
-    const { id } = req.params
+//     res.render('events/my-comments.ejs', { comments })
+//   } catch (error) {
+//     console.error('Error fetching user comments:', error)
+//     res.status(500).send('An error occurred while fetching your comments.')
+//   }
+// })
 
-    const comment = await Comment.findById(id)
-    await comment.deleteOne()
+// router.delete('/my-comments/:id', async (req, res) => {
+//   try {
+//     const { id } = req.params
 
-    res.redirect(/comments/my - comments)
-  } catch (error) {
-    console.log(error)
-    res.redirect('/')
-  }
-})
+//     const comment = await Comment.findById(id)
+//     await comment.deleteOne()
 
-router.get('/my-comments/:commentId/edit', async (req, res) => {
-  try {
-    const comment = await Comment.findById(req.params.commentId).populate(
-      'userId',
-      'username'
-    )
+//     res.redirect(/comments/my - comments)
+//   } catch (error) {
+//     console.log(error)
+//     res.redirect('/')
+//   }
+// })
 
-    res.render('events/edit-comment.ejs', { comment })
-  } catch (error) {
-    console.log(error)
-    res.redirect('/')
-  }
-})
+// router.get('/my-comments/:commentId/edit', async (req, res) => {
+//   try {
+//     const comment = await Comment.findById(req.params.commentId).populate(
+//       'userId',
+//       'username'
+//     )
 
-router.put('/my-comments/:id/edit', async (req, res) => {
-  try {
-    const { id } = req.params
-    const { discription } = req.body
+//     res.render('events/edit-comment.ejs', { comment })
+//   } catch (error) {
+//     console.log(error)
+//     res.redirect('/')
+//   }
+// })
 
-    const comment = await Comment.findById(id)
-    comment.discription = discription
+// router.put('/my-comments/:id/edit', async (req, res) => {
+//   try {
+//     const { id } = req.params
+//     const { discription } = req.body
 
-    await comment.save()
+//     const comment = await Comment.findById(id)
+//     comment.discription = discription
 
-    res.redirect(/comments/my - comments)
-  } catch (error) {
-    console.log(error)
-    res.redirect('/')
-  }
-})
+//     await comment.save()
+
+//     res.redirect(/comments/my - comments)
+//   } catch (error) {
+//     console.log(error)
+//     res.redirect('/')
+//   }
+// })
 module.exports = router

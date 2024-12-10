@@ -5,26 +5,7 @@
   <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
 <body>
-   <!-- Nav start -->
-<div class="nav">
-  <div class="toleft">
-    <a href="/events">TickPic</a>
-  </div>
-  <div class="toRight">
-    <a href="/categories">Categories</a>
-    <% if(user){%>
-      <a href="/auth/profile">My Profile</a>
-      <a href="/auth/sign-out">Sign out</a>  
-      <%}%>
-        
-  </div>
-  
-        
-      </div>
-
-</div>
-
-<!-- nav end-->
+  <%- include('../partials/_nav.ejs') %>
 
   <div class="edit-profile-container">
     <form action="/events" method="POST">

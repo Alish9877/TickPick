@@ -28,14 +28,16 @@ else if (event.tickCount > 0)
 await event.save
 })
 
-router.get('/admin/add' , insureadmin ,(req,res) => {
-  res.render('addEvent')
+router.get('/new' , insureadmin ,(req,res) => {
+  res.render('events/new.ejs')
 })
 
-router.post('/events' , insureadmin , async(req,res) => {
-  const newevent = await event.findById(req.session.event._id)
+
+router.post('/' , insureadmin , async(req,res) => {
+  const newevent = await Event.findById(req.session.event._id)
   newevent.event.push(req.body)
   await newevent.save()
+  res.redirect(`/event/new`)
 })
 
 router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
@@ -43,7 +45,7 @@ router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
   res.render('editEvent' , {event})
 })
 
-router.post('/admin/edit/:eventId', insureadmin  , async(req,res) => {
+router.put('/admin/edit/:eventId', insureadmin  , async(req,res) => {
 try {
   await Event.findByIdAndUpdate(req.params.eventId , req,body)
   res.redirect('/events')
@@ -54,7 +56,7 @@ catch (error) {
 })
 
 
-router.post('/events/delete/:eventId' , insureadmin , async(req,res) => {
+router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)
     Event.save()

@@ -53,6 +53,7 @@ catch (error) {
 }
 })
 
+
 router.post('/events/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)

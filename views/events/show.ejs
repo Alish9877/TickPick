@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TikPik</title>
+  </head>
+  <body>
+    <div class="Comments Section">
+      <h2>Comments Section</h2>
+      <a href="/comments/my-comments">My comments</a>
+      <ul>
+        <% comments.forEach(comment => { %>
+        <li>
+          <% if (comment.userId) { %>
+          <strong><%= comment.userId.username %></strong>: <%=
+          comment.discription %> <% } else { %> <strong>Unknown User</strong>:
+          <%= comment.discription %> <% } %>
+        </li>
+        <% }); %>
+      </ul>
+
+      <form action="/comments" method="POST">
+        <label>
+          Comment:
+          <textarea name="discription" id="discription" required></textarea>
+        </label>
+        <br />
+        <button type="submit">Add Comment</button>
+      </form>
+    </div>
+  </body>
+</html>

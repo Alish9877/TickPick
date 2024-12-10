@@ -12,6 +12,8 @@ const isSignedIn = require('./middleware/is-signed-in')
 // require controllers
 const authCtrl = require('./controller/auth')
 const categoriesCtrl = require('./controller/categories')
+const eventCtrl = require('./controller/events')
+const commentsCtrl = require('./controller/comments')
 
 const PORT = process.env.PORT ? process.env.PORT : '3000'
 
@@ -25,6 +27,7 @@ mongoose.connection.on('connected', () => {
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride('_method'))
 app.use(morgan('dev'))
+
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -32,8 +35,13 @@ app.use(
     saveUninitialized: true
   })
 )
+app.use(passUsertoView)
+app.use(express.static('public'))
 
-// app.use(passUsertoView)
+app.use('/auth', authCtrl)
+app.use('/categories', categoriesCtrl)
+app.use('/events', eventCtrl)
+app.use('/comments', commentsCtrl)
 
 // root route
 app.get('/', async (req, res) => {

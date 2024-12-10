@@ -8,7 +8,8 @@ const Categories = require('../models/category')
 //Root route
 router.get('/' , async(req,res) => {
   const categories = await Categories.find()
-res.render('categories/index.ejs',{categories})
+  const user = await User.findById(req.session.user._id)
+res.render('categories/index.ejs',{categories,user})
 })
 
 //add new category

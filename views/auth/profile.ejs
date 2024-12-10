@@ -9,10 +9,7 @@
 
 <body>
   <!-- //nav -->
-  <div class="nav">
-    <a href="/auth/profile">My Profile</a>
-    <a href="/events">Events</a>
-  </div>
+  <%- include('../partials/_nav.ejs') %>
   <!-- nav end -->
   <div class="profile-container">
     <div class="profile-img">
@@ -22,6 +19,11 @@
     <div class="profile-info">
       <h1><%= user.username%> Profile</h1>
       <p><strong>Username</strong> <%= user.username %></p>
+      <!-- my comments page -->
+
+      <a href="/comments/my-comments">My Comments</a>
+      
+      <!-- edit page -->
       <a href="/auth/edit" class="edit-profile">Edit Profile</a>
       
       <!-- ticket burchased -->

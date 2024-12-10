@@ -1,19 +1,12 @@
-<!-- <nav>
-  <% if(user) { %>
-    <div class="navbar">
-      <h1 id="nav-header">TickPick</h1>
-      <div class="nav-links">
-        <a class="authlink" href="/users/<%=user._id%>/applications">Your Apps</a>
-        <a class="authlink" href="/auth/sign-out">Sign Out</a>
-      </div>
-    </div>
-  <% } else { %>
-    <div class="navbar">
-      <h1 id="nav-header">TickPick</h1>
-      <div class="nav-links">
-        <a class="authlink" href="/auth/sign-in">Sign In</a>
-        <a class="authlink" href="/auth/sign-up">Sign Up</a>
-      </div>
-    </div>
-  <% } %>
-</nav> -->
+<div class="nav">
+  <% 
+      if(user){%>
+          <a href="/auth/profile"><img src="<%= user.img.url%>" class="nav-img"/></a>
+          <a href="/auth/sign-out">Sign out</a>  
+      <%}    
+  %>
+  <a href="/categories" class="toRight">TickPic</a>
+  
+  <a href="/events">Events</a>
+</div>
+<!-- nav end -->

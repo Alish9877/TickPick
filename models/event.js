@@ -14,6 +14,10 @@ const eventSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.Number,
       ref: 'Tickets'
     },
+    tickPrice: {
+      type: mongoose.Schema.Types.Number,
+      ref: 'Tickets'
+    },
     CategoryId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'Category'

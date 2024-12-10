@@ -8,6 +8,7 @@ const morgan = require('morgan')
 const session = require('express-session')
 const passUsertoView = require('./middleware/pass-user-to-views')
 const isSignedIn = require('./middleware/is-signed-in')
+const insureadmin = require('./middleware/insureadmin')
 
 // require controllers
 const authCtrl = require('./controller/auth')
@@ -16,6 +17,9 @@ const eventCtrl = require('./controller/events')
 const commentsCtrl = require('./controller/comments')
 
 const PORT = process.env.PORT ? process.env.PORT : '3000'
+
+//for style
+const path = require('path')
 
 mongoose.connect(process.env.MONGODB_URI)
 

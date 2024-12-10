@@ -12,6 +12,7 @@ const userSchema = new mongoose.Schema({
   role: {
     type: String,
     default: 'guest', // Default role
+    enum: ['guest' , 'admin']
 },
   img: {
     data: Buffer,

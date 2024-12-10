@@ -1,0 +1,260 @@
+body{
+  background-color: #e9e9ef;
+  color: #22177a;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+a{
+
+  text-decoration: none;
+  font-size: 1em;
+  padding: 8px 0;
+  border-radius: 25px;
+  width: 10em;
+  text-align: center;
+}
+
+h1{
+  text-align: center;
+}
+
+.text-container {
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 50%;
+  color: #e9e9ef;
+  text-shadow: #1c2e5b 2px 2px;
+  text-align: center;
+}
+
+
+.main-header {
+  display: flex;
+  font-weight: bold;
+  font-size: 5em;
+  align-items: center;
+}
+
+.subheader {
+  margin: 0 20px 0 20px;
+  font-size: 1.4em;
+}
+
+.index-container {
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.auth-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 80px 0 0;
+  height: 100%;
+}
+
+.auth-links > a{
+  margin: 20px 10px;
+  color: #ffffff;
+  background-color: #605ea1;
+  height: 2em;
+
+}
+
+.auth-links > a:hover{
+  background-color: #333265;
+}
+
+
+
+/* Sign-in Container */
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.image-container {
+  flex: 0.4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-container img {
+height: 100%;
+width: auto;
+max-width: 100%;
+}
+
+.signin-container, .signup-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 40px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 30em;
+  max-height: 800px;
+  max-width: 90%;
+  padding: 40px;
+  border-radius: 20px;
+  color: #4b598e;
+  font-weight: bold;
+  background-color: white;  
+}
+
+form > button{
+  background-color: #605ea1;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 3em;
+}
+
+form > button:hover {
+  background-color: #4b4e8a; 
+}
+
+input[type=text], input[type=password]{
+  height: 2em;
+  
+}
+
+
+.category-list{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.category-list > figure {
+  margin: 25px;
+  text-align: center; 
+}
+
+.category-list > figure > img{
+  width: 15em;
+  height: 10em;
+}
+
+figcaption {
+  font-weight: bold;
+  color: #22177a
+}
+
+
+/* //profile */
+.profile-container {
+  max-width: 600px; 
+  margin: 50px auto; 
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center; 
+}
+
+.profile-img img {
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  border: 3px solid #4b598e; 
+  margin-bottom: 20px;
+}
+
+.profile-info h1 {
+  font-size: 24px;
+  color: #4b598e; 
+  margin: 10px 0; 
+}
+
+.profile-info p {
+  font-size: 16px;
+  color: #555;
+}
+
+.edit-profile {
+  display: inline-block; /* Make link behave like a button */
+  margin: 15px 0; /* Space around the edit button */
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #605ea1; /* Button color */
+  color: white; /* Button text color */
+  text-decoration: none; /* Remove underline */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth transition */
+  width: 80%;
+}
+
+.edit-profile:hover {
+  background-color: #4b4e8a; /* Darker shade on hover */
+}
+
+.delete-account-form {
+  margin-top: 20px; /* Space above the delete form */
+}
+
+.delete-account {
+  padding: 10px 20px; /* Padding inside the button */
+  background-color: #e74c3c; /* Delete button color */
+  color: white; /* Button text color */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer on hover */
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+.delete-account:hover {
+  background-color: #c0392b; /* Darker shade on hover */
+}
+
+
+/* //edit profile */
+.edit-profile-container {
+  display: flex;
+  border-radius: 10px;
+  text-align: center; 
+  justify-content: center;
+  margin-top: 40px;
+}
+.edit-img img {
+  max-width: 200px; 
+  border-radius: 50%; 
+  border: 3px solid #4b598e;
+  margin-bottom: 20px; 
+}
+
+
+/* //navigation */
+.nav {
+  background-color: #4b598e; /* Darker background for navbar */
+  padding: 10px;
+  text-align: right; /* Align links to the right */
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px; /* Spacing between links */
+  font-weight: bold;
+}
+

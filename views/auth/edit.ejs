@@ -4,23 +4,36 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Profile</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
+</head>
 </head>
 <body>
-  <h1>Edit Profile</h1>
-  <form action="/auth/profile.ejs?_METHOD=PUL" method="post">
+  <!-- //nav -->
+  <div class="nav">
+    <a href="/auth/profile">My Profile</a>
+    <a href="/events">Events</a>
+  </div>
+  <!-- nav end -->
+  <div class="edit-profile-container">
+    <form action="/auth/update/<%= user._id%>?_method=PUT" method="post">
+    <h1>Edit Profile</h1>
+    <div class="edit-img">
+      <img src="<%= user.img.url %>" style="max-width: 200px; border-radius: 50%;"/> <br>
+    </div>
     <label>New Username:</label>
-    <input type="text" name="newUsername" id="newUsername" value="<%= user.username %>">
+    <input type="text" name="username" id="newUsername" value="<%= user.username %>"><br>
 
     <label for="password">Old Password</label>
-    <input type="password" name="oldPassword" id="oldPassword">
+    <input type="password" name="oldPassword" id="oldPassword"><br>
 
     <label for="newPassword">newPassword</label>
-    <input type="password" name="newPassword" id="newPassword">
+    <input type="password" name="newPassword" id="newPassword"><br>
 
     <label for="img">Profile Image</label>
-    <input type="file" id="img" name="img" value="<%= user.img.url %>">
+    <input type="url" id="img" name="img" value="<%= user.img.url %>"><br>
 
     <button type="submit">Update Profile</button>
   </form>
+</div>
 </body>
 </html>

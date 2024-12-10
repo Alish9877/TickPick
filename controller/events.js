@@ -43,7 +43,7 @@ router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
   res.render('editEvent' , {event})
 })
 
-router.post('/admin/edit/:eventId', insureadmin  , async(req,res) => {
+router.put('/admin/edit/:eventId', insureadmin  , async(req,res) => {
 try {
   await Event.findByIdAndUpdate(req.params.eventId , req,body)
   res.redirect('/events')
@@ -53,7 +53,7 @@ catch (error) {
 }
 })
 
-router.post('/events/delete/:eventId' , insureadmin , async(req,res) => {
+router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)
     Event.save()

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event</title>
+</head>
+<body>
+  <h1>Add New Event</h1>
+  <form action="/Event/<%= event._id %>/events" method="POST">
+    <label>Name:</label>
+    <input type="text" name="name" required><br>
+    <label>Date:</label>
+    <input type="date" name="date" required><br>
+    <label>Price:</label>
+    <input type="number" name="price" required><br>
+    <label>Tickets:</label>
+    <input type="number" name="tickCount" required><br>
+    <button type="submit">Add Event</button>
+  </form>
+</body>
+</html>

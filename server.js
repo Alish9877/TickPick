@@ -61,5 +61,3 @@ res.send(`Welcome to the party ${req.session.user.username}`)
 app.listen(PORT , () => {
   console.log(`Listening on port ${PORT}`)
 })
-
-

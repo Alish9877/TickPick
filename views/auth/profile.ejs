@@ -4,20 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>profile</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
+
 <body>
-  <div>
-    <strong>Profile Image:</strong><br>
-    <img src="<%= user.img.url %>" alt="Profile Image" style="max-width: 200px; border-radius: 50%;">
-</div>
-  <div class="right">
-    <h1><%= user.username%> Profile</h1>
-    <p><strong>Username</strong> <%= user.username %></p>
-    <a href="/auth/edit">Edit Profile</a>
-    
-    <form action="/auth/<%= user._id %>?_method=DELETE" method="post">
-      <button type="submit">Delete Account</button>
-    </form>
+  <!-- //nav -->
+  <div class="nav">
+    <a href="/auth/profile">My Profile</a>
+    <a href="/events">Events</a>
+  </div>
+  <!-- nav end -->
+  <div class="profile-container">
+    <div class="profile-img">
+      <!-- <strong>Profile Image:</strong><br> -->
+      <img src="<%= user.img.url %>" alt="Profile Image" style="max-width: 200px; border-radius: 50%;">
+  </div>
+    <div class="profile-info">
+      <h1><%= user.username%> Profile</h1>
+      <p><strong>Username</strong> <%= user.username %></p>
+      <a href="/auth/edit" class="edit-profile">Edit Profile</a>
+      
+      <!-- ticket burchased -->
+
+
+      <form action="/auth/<%= user._id %>?_method=DELETE" method="post">
+        <button type="submit" class="delete-account">Delete Account</button>
+      </form>
+    </div>
   </div>
 
 </body>

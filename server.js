@@ -43,9 +43,9 @@ app.use(passUsertoView)
 app.use(express.static('public'))
 
 app.use('/auth', authCtrl)
-app.use('/categories', categoriesCtrl)
-app.use('/events', eventCtrl)
-app.use('/comments', commentsCtrl)
+app.use('/categories', isSignedIn, categoriesCtrl)
+app.use('/events', isSignedIn,eventCtrl)
+app.use('/comments', isSignedIn,commentsCtrl)
 
 // root route
 app.get('/', async (req, res) => {

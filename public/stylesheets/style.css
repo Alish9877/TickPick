@@ -29,8 +29,9 @@ h1{
   height: 100%;
   width: 50%;
   color: #e9e9ef;
-  text-shadow: #1c2e5b 2px 2px;
+  text-shadow: #000000 2px 2px;
   text-align: center;
+  opacity: 0.8;
 }
 
 
@@ -38,12 +39,18 @@ h1{
   display: flex;
   font-weight: bold;
   font-size: 5em;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  opacity: 1;
 }
 
 .subheader {
   margin: 0 20px 0 20px;
+  font-weight: bold;
   font-size: 1.4em;
+  opacity: 1;
+  text-shadow: #000000 2px 2px;
 }
 
 .index-container {
@@ -69,6 +76,11 @@ h1{
   color: #ffffff;
   background-color: #605ea1;
   height: 2em;
+  width: 15em;
+  font-size: large;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 }
 
@@ -96,6 +108,7 @@ h1{
 height: 100%;
 width: auto;
 max-width: 100%;
+
 }
 
 .signin-container, .signup-container{
@@ -194,14 +207,14 @@ figcaption {
 }
 
 .edit-profile {
-  display: inline-block; /* Make link behave like a button */
-  margin: 15px 0; /* Space around the edit button */
-  padding: 10px 20px; /* Padding inside the button */
-  background-color: #605ea1; /* Button color */
-  color: white; /* Button text color */
-  text-decoration: none; /* Remove underline */
-  border-radius: 5px; /* Rounded corners */
-  transition: background-color 0.3s; /* Smooth transition */
+  display: inline-block;
+  margin: 15px 0; 
+  padding: 10px 20px; 
+  background-color: #605ea1;
+  color: white; 
+  text-decoration: none;
+  border-radius: 5px; 
+  transition: background-color 0.3s; 
   width: 80%;
 }
 
@@ -247,26 +260,28 @@ figcaption {
 /* //navigation */
 .nav {
   background-color: #4b598e; 
-  padding: 20px;
+  padding: 5px;
   text-align: right; /* Align links to the right */
+  padding: 10px;
 }
+
+
 
 .nav a {
   color: white;
   text-decoration: none;
-  margin: 0 20px;
   font-weight: bold;
   align-items: center;
+  float: right;
+}
+
+
+.nav-img{
+  max-width:2em;
+  height: auto;
+  border-radius: 50%;  
 }
 
 .toRight{
   float: left;
 }
-
-.nav-img{
-  width:2em;
-  padding: 0;
-  border-radius: 50%;
-
-}
-

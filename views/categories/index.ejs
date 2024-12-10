@@ -9,15 +9,7 @@
 <body>
   <!-- //nav -->
 <div class="nav">
-    <% 
-        if(user){%>
-            <a href="/auth/profile"><img src="<%= user.img.url%>" class="nav-img"/></a>
-            <a href="/auth/sign-out">Sign out</a>  
-        <%}    
-    %>
-    <a href="/categories" class="toRight">TickPic</a>
-    
-    <a href="/events">Events</a>
+    <%- include('../partials/_nav.ejs') %>
 </div>
 <!-- nav end -->
 

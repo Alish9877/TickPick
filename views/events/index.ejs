@@ -1,8 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TikPick</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+</head>
 <body>
-  <h1>new Events</h1>
+  <h1>New Events</h1>
   <p>View more events by ...</p>
   <a href="../categories/">Categories</a>
+  <% if (user.role == 'admin') { %> 
   <a href="/events/new">Add new</a>
+  <%} %>
   <!-- <a href="/events/new">Add Event</a>  -->
   <h2>Recently Events</h2>
   <div>
@@ -25,4 +35,4 @@
     </caption>
     </div>
 </body>
-
+</html>

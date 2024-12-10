@@ -148,7 +148,7 @@ router.put('/update/:userId', async (req, res) => {
     }
     await user.save()
 
-    console.log(req.body)
+    // console.log(req.body)
     res.redirect('/auth/profile')
   } catch (error) {
     console.error(error)

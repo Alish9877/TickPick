@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const insureadmin = require('../middleware/insureadmin')
 const Event = require('../models/event');
+const User = require('../models/user')
 // const Category = require('../models/categories');
 // router.get('/events' , async (req,res) => {
 //   try { const events = await Event.find({}).populate('CategoryId')
@@ -13,9 +14,10 @@ const Event = require('../models/event');
 // }
 // })
 router.get('/' , async(req,res) => {
+  const user = await User.findById(req.session.user._id)
   const events = await Event.find()
-  console.log(events)
-res.render('events/index.ejs',{events})
+  // console.log(events)
+res.render('events/index.ejs',{events,user})
 })
 
 router.get('/reserve/:eventId', async(req,res) =>{
@@ -26,8 +28,9 @@ else if (event.tickCount > 0)
   return res.send('Ticket reserved!')
 await event.save
 })
-router.get('/new' , insureadmin ,(req,res) => {
-  res.render('events/new.ejs')
+router.get('/new' , insureadmin ,async(req,res) => {
+  const user = await User.findById(req.session.user._id)
+  res.render('events/new.ejs',{user})
 })
 // router.post('/' , insureadmin , async(req,res) => {
 //   const newevent = await Event.findById(req.session.user._id)
@@ -54,6 +57,7 @@ router.post('/', insureadmin, async (req, res) => {
     res.status(500).send('Error creating event');
   }
 });
+
 router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
   const event = await Event.findById(req.params.eventId)
   res.render('editEvent' , {event})

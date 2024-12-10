@@ -1,0 +1,14 @@
+<body>
+  <div>
+    <h2>My Comments</h2>
+    <% if (comments.length > 0) { %>
+    <ul>
+      <% comments.forEach(comment => { %>
+      <li><%= comment.userId.username %>: <%= comment.discription %></li>
+      <% }); %>
+    </ul>
+    <% } else { %>
+    <p>You have not made any comments yet.</p>
+    <% } %>   
+  </div>
+</body>

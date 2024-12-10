@@ -41,7 +41,8 @@ router.post('/', insureadmin, async (req, res) => {
       Date: req.body.Date,
       tickCount: req.body.tickCount,
       userId: req.session.user._id,
-      tickPrice: req.body.tickPrice
+      tickPrice: req.body.tickPrice,
+      Category: req.body.Category
     });
     // Save the new event
     await newEvent.save();

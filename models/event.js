@@ -18,9 +18,9 @@ const eventSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.Number,
       ref: 'Tickets'
     },
-    CategoryId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Category'
+    Category: {
+      type: String,
+      require: true 
     }
   },
   {

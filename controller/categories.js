@@ -15,7 +15,6 @@ router.get('/', async (req, res) => {
   }
 })
 
-
 router.post('/', async (req, res) => {
   try {
     const newComment = {
@@ -29,11 +28,13 @@ router.post('/', async (req, res) => {
     console.error(error)
     res.status(500).send('Error creating comment')
   }
+})
+
 //Root route
-router.get('/' , async(req,res) => {
+router.get('/', async (req, res) => {
   const categories = await Categories.find()
   const user = await User.findById(req.session.user._id)
-res.render('categories/index.ejs',{categories,user})
+  res.render('categories/index.ejs', { categories, user })
 })
 
 router.get('/my-comments', async (req, res) => {

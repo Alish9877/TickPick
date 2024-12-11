@@ -1,15 +1,22 @@
+<!DOCTYPE html>
+<html>
 <head>
-  <link rel="stylesheet" href="../stylesheets/style.css">
+  <title>Add Event</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
 <body>
-<h1><%= Event.eventname%></h1>
-<h2><%= Event.Date%></h2>
-<button><%= Event.tickCount%></button>
+<h1><%= event.eventname%></h1>
+<h2><%= event.Date%></h2>
+<button><%= event.tickCount%></button>
 <div>
   <h1>Event Description</h1>
-  <a href="">Buy a Ticket</a>
-  <a href="../">Back to the list</a>
+  <a href="">Buy a Ticket</a> <br>
+  <a href="../">Back to the list</a><br>
+  <% if (user.role == 'admin') { %> 
+    <a href="/events/edit/<%= event._id%>">Edit event</a>
+    <%} %>
 </div>
 <div>
 </div>
 </body>
+</html>

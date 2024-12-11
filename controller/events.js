@@ -2,22 +2,11 @@ const router = require('express').Router();
 const insureadmin = require('../middleware/insureadmin')
 const Event = require('../models/event');
 const User = require('../models/user')
-const Comment=require('../models/comment')
-// const Category = require('../models/categories');
-// router.get('/events' , async (req,res) => {
-//   try { const events = await Event.find({}).populate('CategoryId')
-//   console.log(events)
-//   res.render('events/index.ejs')
-// }
-// catch (error){
-//   console.log(error)
-//   res.redirect('/')
-// }
-// })
+
+
 router.get('/' , async(req,res) => {
   const user = await User.findById(req.session.user._id)
   const events = await Event.find()
-  // console.log(events)
 res.render('events/index.ejs',{events,user})
 })
 
@@ -26,23 +15,18 @@ const event = await Event.findById(req.params.eventId)
 if (event.tickCount <= 0)
   return res.send('Sold out!')
 else if (event.tickCount > 0)
-  return res.render('events/reserve.ejs')
-await event.save
+  await event.save
+console.log(event)
+  return res.render('events/reserve.ejs' , {event})
 })
 
 router.get('/new' , insureadmin ,async(req,res) => {
   const user = await User.findById(req.session.user._id)
   res.render('events/new.ejs',{user})
 })
-// router.post('/' , insureadmin , async(req,res) => {
-//   const newevent = await Event.findById(req.session.user._id)
-//   newevent.event.push(req.body)
-//   await newevent.save()
-//   res.redirect('/events')
-// })
+
 router.post('/', insureadmin, async (req, res) => {
   try {
-    // Create a new event, set the data passed in req.body
     const newEvent = new Event({
       eventname: req.body.eventname,
       Date: req.body.Date,
@@ -51,9 +35,7 @@ router.post('/', insureadmin, async (req, res) => {
       tickPrice: req.body.tickPrice,
       Category: req.body.Category
     });
-    // Save the new event
     await newEvent.save();
-    // Redirect to events list after creation
     res.redirect('/events');
   } catch (error) {
     console.log(error);
@@ -61,19 +43,29 @@ router.post('/', insureadmin, async (req, res) => {
   }
 });
 
-router.get('/admin/edit/:eventId', insureadmin  , async(req,res) => {
+router.get('/edit/:eventId', insureadmin  , async(req,res) => {
   const event = await Event.findById(req.params.eventId)
-  res.render('editEvent' , {event})
+  res.render('events/edit.ejs' , {event})
 })
-router.put('/admin/edit/:eventId', insureadmin  , async(req,res) => {
-try {
-  await Event.findByIdAndUpdate(req.params.eventId , req,body)
+router.put('/edit/:eventId', insureadmin  , async(req,res) => {
+  try {
+    const event = await Event.findByIdAndUpdate(
+      req.params.eventId,
+      {
+        eventname: req.body.eventname,
+        Date: req.body.Date,
+        tickCount: req.body.tickCount,
+        tickPrice: req.body.tickPrice,
+        Category: req.body.Category,
+      })
+  await event.save()
   res.redirect('/events')
-}
+  }
 catch (error) {
   console.log(error)
 }
 })
+
 router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)
@@ -84,8 +76,4 @@ router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
     console.log(error)
   }
 })
-
-
-
 module.exports = router
-

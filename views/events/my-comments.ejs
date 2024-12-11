@@ -1,8 +1,8 @@
 <head>
-  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="../../stylesheets/style.css" />
 </head>
+
 <body>
-<<<<<<< HEAD
   <div class="nav">
     <div class="toleft">
       <a href="/categories">TickPic</a>
@@ -16,14 +16,10 @@
     </div>
   </div>
   <div class="comments-container">
-=======
-  <div>
->>>>>>> e9d5bb3c6f89efcfea134efb5bb7eb570bd4ed21
     <h2>My Comments</h2>
     <% if (comments.length > 0) { %>
-    <ul>
+    <ul class="comments-list">
       <% comments.forEach(comment => { %>
-<<<<<<< HEAD
       <li class="comment-item">
         <span class="comment-text"
           ><%= comment.userId.username %>: <%= comment.discription %></span
@@ -38,26 +34,14 @@
         >
         <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="padding: 10px;"
           >Edit</a
-=======
-      <li>
-        <%= comment.userId.username %>: <%= comment.discription %>
-        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="background-color: rgba(0, 0, 139, 0.758); color: white; border-radius: 20%; padding: 14px 20px; font-weight: bold;"
-          >Edit</a
         >
-        <form
-          action="/comments/my-comments/<%= comment._id %>?_method=DELETE"
-          method="POST"
-          style="display: inline; padding:0 0 0 20px;"
->>>>>>> e9d5bb3c6f89efcfea134efb5bb7eb570bd4ed21
-        >
-          <button type="submit" style="background-color: rgba(255, 2, 2, 0.626); border-radius: 20%; padding: 10px 20px;font-weight: bold;">Delete</button>
+          <button type="submit" class="delete-btn">Delete</button>
         </form>
       </li>
-
       <% }); %>
     </ul>
     <% } else { %>
-    <p>You have not made any comments yet.</p>
+    <p>No comments yet.</p>
     <% } %>
   </div>
 </body>

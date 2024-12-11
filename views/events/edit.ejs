@@ -1,0 +1,75 @@
+<body>
+  <%- include('../partials/_navbar.ejs') %>
+  <h1>Edit Event</h1>
+  
+  <div class="new-body">
+  <form 
+    action="/events?_method=PUT"
+    method="POST"
+  >
+    <label for="eventname">name:</label>
+    <input 
+      type="text" 
+      name="eventname" 
+      id="eventname" 
+      value="<%= Event.eventname %>"
+    >
+    <br>
+    <label for="Date">Date:</label>
+    <input type="date" name="date" id="date" value="<%= Event.Date %>">
+    <br>
+
+    <label for="tickCount">tickCount:</label>
+    <input 
+      type="number" 
+      name="tickCount" 
+      id="tickCount" 
+      value="<%= Ticket.tickCount %>"
+    >
+    <br>
+
+    <label for="Category">Category:</label>
+    <select id="Category" name="Category">
+      <option 
+        value="Books" 
+        <%= Event.Category === "Books" ? "selected" : "" %>
+      >
+        Books
+      </option>
+      <option 
+        value="Cars" 
+        <%= Event.Category === "Cars" ? "selected" : "" %>
+      >
+      Cars
+      </option>
+      <option 
+        value="Music" 
+        <%= Event.Category === "Music" ? "selected" : "" %> 
+      >
+      Music
+      </option>
+      <option 
+        value="Festivals" 
+        <%= Event.Category === "Festivals" ? "selected" : "" %>
+      >
+      Festivals
+      </option>
+      <option
+        value="Sports"
+        <%= Event.Category === "Sports" ? "selected" : "" %>
+      >
+      Sports
+      </option>
+      <option
+        value="Comedy"
+        <%= Event.Category === "Comedy" ? "selected" : "" %>
+      >
+      Comedy
+      </option>
+    </select>
+    <br>
+
+    <button type="submit">Update Application</button>
+  </form>
+</div>
+</body>

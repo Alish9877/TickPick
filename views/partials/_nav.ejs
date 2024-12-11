@@ -1,17 +1,13 @@
 <div class="nav">
   <div class="toleft">
-  <% 
-    if(user){%>
-      <a href="/auth/profile"><img src="<%= user.img.url%>" class="nav-img"/></a>
-      <a href="/auth/sign-out">Sign out</a>  
-      <%}    
-      %>
-      
-      <a href="/events">Events</a>
-    </div>
-
-    <div class="toRight">
-      <a href="/categories" >TickPic</a>
-    </div>
+    <a href="/events">TickPic</a>
+  </div>
+  <div class="toRight">
+    <a href="/categories">Categories</a>
+    <% if (user) { %>
+      <a href="/auth/sign-out">Sign out</a>
+      <a href="/auth/profile"><img src="<%= user.img.url %>" class="nav-img" alt="Profile Image"/></a>
+    <% } %>
+  </div>
 </div>
 <!-- nav end -->

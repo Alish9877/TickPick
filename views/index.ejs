@@ -7,7 +7,17 @@
   <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
-  <%- include('./partials/_nav.ejs') %>
+  <div class="nav">
+    <div class="toleft">
+      <a href="/categories">TickPic</a>
+    </div>
+    <div class="toRight">
+      <a href="/events">Events</a>
+      <% if (user) { %>
+        <a href="/auth/sign-out">Sign out</a>
+      <% } %>
+    </div>
+  </div>
   <div class="index-container">
     <div class="text-container">
       <h1 class="main-header">TikPick</h1>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1><%= user.username%> Comment</h1>
+    <strong>Comment: </strong> <%= comment.discription %></p>
+    <form action="/comments<%=comment._id%>?_method=DELETE" method="POST">
+      <button type="submit">Delete <%= comment.comment %></button>
+    </form>
+    <a href="/comments/my-comments">Back to comments</a>
+  </body>
+</html>

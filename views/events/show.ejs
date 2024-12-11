@@ -7,28 +7,29 @@
     <link rel="stylesheet" href="../../stylesheets/style.css" />
   </head>
   <body>
-    <div class="Comments Section">
-      <h2>Comments Section</h2>
-      <a href="/comments/my-comments">My comments</a>
-      <ul>
+    <section class="comments-section">
+      <header>
+        <h2>Comments Section</h2>
+        <a href="/comments/my-comments" class="my-comments-link">My Comments</a>
+      </header>
+      <ul class="comments-list">
         <% comments.forEach(comment => { %>
-        <li>
+        <li class="comment-item">
           <% if (comment.userId) { %>
-          <strong><%= comment.userId.username %></strong>: <%=
-          comment.discription %> <% } else { %> <strong>Unknown User</strong>:
-          <%= comment.discription %> <% } %>
+          <span class="comment-author"><%= comment.userId.username %></span>:
+          <span class="comment-text"><%= comment.discription %></span>
+          <% } else { %>
+          <span class="comment-author">Unknown User</span>:
+          <span class="comment-text"><%= comment.discription %></span>
+          <% } %>
         </li>
         <% }); %>
       </ul>
-
-      <form action="/comments" method="POST">
-        <label>
-          Comment:
-          <textarea name="discription" id="discription" required></textarea>
-        </label>
-        <br />
+      <form action="/comments" method="POST" class="add-comment">
+        <label for="discription">Comment:</label>
+        <textarea name="discription" id="discription" required></textarea>
         <button type="submit">Add Comment</button>
       </form>
-    </div>
+    </section>
   </body>
 </html>

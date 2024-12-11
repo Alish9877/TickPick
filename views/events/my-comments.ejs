@@ -1,32 +1,30 @@
 <head>
-  <link rel="stylesheet" href="../../stylesheets/style.css" />
+  <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
-
 <body>
-  <div class="comments-container">
+  <div>
     <h2>My Comments</h2>
     <% if (comments.length > 0) { %>
-    <ul class="comments-list">
+    <ul>
       <% comments.forEach(comment => { %>
-      <li class="comment-item">
-        <span class="comment-text"
-          ><%= comment.userId.username %>: <%= comment.discription %></span
-        >
-        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn"
+      <li>
+        <%= comment.userId.username %>: <%= comment.discription %>
+        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="background-color: rgba(0, 0, 139, 0.758); color: white; border-radius: 20%; padding: 14px 20px; font-weight: bold;"
           >Edit</a
         >
         <form
           action="/comments/my-comments/<%= comment._id %>?_method=DELETE"
           method="POST"
-          class="delete-form"
+          style="display: inline; padding:0 0 0 20px;"
         >
-          <button type="submit" class="delete-btn">Delete</button>
+          <button type="submit" style="background-color: rgba(255, 2, 2, 0.626); border-radius: 20%; padding: 10px 20px;font-weight: bold;">Delete</button>
         </form>
       </li>
+
       <% }); %>
     </ul>
     <% } else { %>
-    <p>No comments yet.</p>
+    <p>You have not made any comments yet.</p>
     <% } %>
   </div>
 </body>

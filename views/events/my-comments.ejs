@@ -3,6 +3,18 @@
 </head>
 
 <body>
+  <div class="nav">
+    <div class="toleft">
+      <a href="/categories">TickPic</a>
+    </div>
+    <div class="toRight">
+      <a href="/events">Events</a>
+      <% if (user) { %>
+        <a href="/auth/profile">My Profile</a>
+        <a href="/auth/sign-out">Sign out</a>
+      <% } %>
+    </div>
+  </div>
   <div class="comments-container">
     <h2>My Comments</h2>
     <% if (comments.length > 0) { %>
@@ -12,13 +24,16 @@
         <span class="comment-text"
           ><%= comment.userId.username %>: <%= comment.discription %></span
         >
-        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn"
-          >Edit</a
-        >
+        
         <form
           action="/comments/my-comments/<%= comment._id %>?_method=DELETE"
           method="POST"
           class="delete-form"
+          style="display: inline; padding:0 0 0 20px; background-color: rgba(255, 255, 255, 0);"
+
+        >
+        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="padding: 10px;"
+          >Edit</a
         >
           <button type="submit" class="delete-btn">Delete</button>
         </form>

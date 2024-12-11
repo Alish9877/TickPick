@@ -3,6 +3,7 @@ const insureadmin = require('../middleware/insureadmin')
 const Category = require('../models/category')
 const Event = require('../models/event')
 const User = require('../models/user')
+const Comment = require('../models/comment')
 
 
 router.get('/' , async(req,res) => {
@@ -12,13 +13,15 @@ res.render('events/index.ejs',{events,user})
 })
 
 router.get('/reserve/:eventId', async(req,res) =>{
+const comments = await Comment.find({}).populate('userId', 'username')
+
 const event = await Event.findById(req.params.eventId)
 if (event.tickCount <= 0)
   return res.send('Sold out!')
 else if (event.tickCount > 0)
   await event.save
 console.log(event)
-  return res.render('events/reserve.ejs' , {event})
+  return res.render('events/reserve.ejs' , {event,comments})
 })
 
 router.get('/reserved/:eventId' , async(req,res)=>{

@@ -1,30 +1,47 @@
 <head>
-  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link rel="stylesheet" href="../../stylesheets/style.css" />
 </head>
+
 <body>
-  <div>
+  <div class="nav">
+    <div class="toleft">
+      <a href="/categories">TickPic</a>
+    </div>
+    <div class="toRight">
+      <a href="/events">Events</a>
+      <% if (user) { %>
+        <a href="/auth/profile">My Profile</a>
+        <a href="/auth/sign-out">Sign out</a>
+      <% } %>
+    </div>
+  </div>
+  <div class="comments-container">
     <h2>My Comments</h2>
     <% if (comments.length > 0) { %>
-    <ul>
+    <ul class="comments-list">
       <% comments.forEach(comment => { %>
-      <li>
-        <%= comment.userId.username %>: <%= comment.discription %>
-        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="background-color: rgba(0, 0, 139, 0.758); color: white; border-radius: 20%; padding: 14px 20px; font-weight: bold;"
-          >Edit</a
+      <li class="comment-item">
+        <span class="comment-text"
+          ><%= comment.userId.username %>: <%= comment.discription %></span
         >
+        
         <form
           action="/comments/my-comments/<%= comment._id %>?_method=DELETE"
           method="POST"
-          style="display: inline; padding:0 0 0 20px;"
+          class="delete-form"
+          style="display: inline; padding:0 0 0 20px; background-color: rgba(255, 255, 255, 0);"
+
         >
-          <button type="submit" style="background-color: rgba(255, 2, 2, 0.626); border-radius: 20%; padding: 10px 20px;font-weight: bold;">Delete</button>
+        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="padding: 10px;"
+          >Edit</a
+        >
+          <button type="submit" class="delete-btn">Delete</button>
         </form>
       </li>
-
       <% }); %>
     </ul>
     <% } else { %>
-    <p>You have not made any comments yet.</p>
+    <p>No comments yet.</p>
     <% } %>
   </div>
 </body>

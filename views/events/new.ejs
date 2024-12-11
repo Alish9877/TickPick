@@ -2,33 +2,39 @@
 <html>
 <head>
   <title>Add Event</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
 <body>
-  <h1>Add New Event</h1>
-  <form action="/events" method="POST">
-    <label for="eventname">Event Name:</label>
-    <input type="text" name="eventname" id="eventname" required>
-  
-    <label for="Date">Event Date:</label>
-    <input type="date" name="Date" id="Date" required>
-  
-    <label for="tickCount">Ticket Count:</label>
-    <input type="number" name="tickCount" id="tickCount" required>
-  
-    <label for="tickPrice">Ticket Price:</label>
-    <input type="number" name="tickPrice" id="tickPrice" required>
-    <label for="Categories">Category:</label>
-    <select id="Category" name="Category">
-      <option value="Books">Books</option>
-      <option value="cars">Cars</option>
-      <option value="Music">Music</option>
-      <option value="Festivals">Festivals</option>
-      <option value="Sports">Sports</option>
-      <option value="Comedy">Comedy</option>      
-    </select>
-    <br>
+  <%- include('../partials/_nav.ejs') %>
 
-    <button type="submit">Add Event</button>
-  </form>
+  <div class="edit-profile-container">
+    <form action="/events" method="POST">
+      <h1>Add New Event</h1>
+      <br>
+      <label for="eventname">Event Name:</label>
+      <input type="text" name="eventname" id="eventname" required>
+    
+      <label for="Date">Event Date:</label>
+      <input type="date" name="Date" id="Date" required>
+    
+      <label for="tickCount">Ticket Count:</label>
+      <input type="number" name="tickCount" id="tickCount" required>
+    
+      <label for="tickPrice">Ticket Price:</label>
+      <input type="number" name="tickPrice" id="tickPrice" required>
+      <label for="Categories">Category:</label>
+      <select id="Category" name="Category">
+        <option value="Books">Books</option>
+        <option value="cars">Cars</option>
+        <option value="Music">Music</option>
+        <option value="Festivals">Festivals</option>
+        <option value="Sports">Sports</option>
+        <option value="Comedy">Comedy</option>      
+      </select>
+      <br>
+  
+      <button type="submit">Add Event</button>
+    </form>
+  </div>
 </body>
 </html>

@@ -1,4 +1,4 @@
-body {
+body{
   background-color: #e9e9ef;
   color: #22177a;
   font-family: 'Poppins', sans-serif;
@@ -8,7 +8,8 @@ body {
   width: 100%;
 }
 
-a {
+a{
+
   text-decoration: none;
   font-size: 1em;
   padding: 8px 0;
@@ -17,12 +18,12 @@ a {
   text-align: center;
 }
 
-h1 {
+h1{
   text-align: center;
 }
 
 .text-container {
-  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg');
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -32,6 +33,7 @@ h1 {
   text-align: center;
   opacity: 0.8;
 }
+
 
 .main-header {
   display: flex;
@@ -52,6 +54,7 @@ h1 {
 }
 
 .index-container {
+  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -68,7 +71,7 @@ h1 {
   height: 100%;
 }
 
-.auth-links > a {
+.auth-links > a{
   margin: 20px 10px;
   color: #ffffff;
   background-color: #605ea1;
@@ -78,11 +81,14 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
+
 }
 
-.auth-links > a:hover {
+.auth-links > a:hover{
   background-color: #333265;
 }
+
+
 
 /* Sign-in Container */
 
@@ -105,8 +111,7 @@ max-width: 100%;
 
 }
 
-.signin-container,
-.signup-container {
+.signin-container, .signup-container{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,10 +130,10 @@ form {
   border-radius: 20px;
   color: #4b598e;
   font-weight: bold;
-  background-color: white;
+  background-color: white;  
 }
 
-form > button {
+form > button{
   background-color: #605ea1;
   color: white;
   border: none;
@@ -138,61 +143,92 @@ form > button {
 }
 
 form > button:hover {
-  background-color: #4b4e8a;
+  background-color: #4b4e8a; 
 }
 
-
-input[type='text'],
-input[type='password'] {
 input[type=text], input[type=password], input[type=url]{
   height: 2em;
+  
 }
 
+/* category page */
+/* Category list styles */
 .category-list {
+  display: flex; 
+  flex-wrap: wrap; 
+  justify-content: center; 
+  padding: 20px; 
+}
+
+/* Category button styles */
+.category-button {
+  background-color: white;
+  border: none; 
+  border-radius: 5px; 
+  margin: 20px; 
+  cursor: pointer;
+  
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
-.category-list > figure {
-  margin: 25px;
+  flex-direction: column; /*important line*/
+  align-items: center;  /*important line*/
   text-align: center;
+  width: 20em; 
+  height: auto;
+  box-shadow: 2px 2px 5px gray; 
 }
 
-.category-list > figure > img {
-  width: 15em;
-  height: 10em;
+/* category img style */
+.category-button img {
+  max-width: 100%;
+  max-height: 100%;
+  height: 15em;
+  
 }
 
-figcaption {
+/* category text */
+.category-button figcaption {
+  margin: 10px 0;
   font-weight: bold;
-  color: #22177a;
+  color:#22177a; 
 }
+
+/* Hover effects for buttons */
+.category-button:hover {
+  box-shadow: 2px 2px 20px rgba(17, 10, 151, 0.685);
+}
+
+/* for smaller screens */
+@media (max-width: 600px) {
+  .category-button {
+      width: 100%; 
+      max-width: 300px;
+  }
+}
+
 
 /* //profile */
 .profile-container {
-  max-width: 600px;
-  margin: 50px auto;
+  max-width: 600px; 
+  margin: 50px auto; 
   padding: 20px;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 10px; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  text-align: center; 
 }
 
 .profile-img img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  border: 3px solid #4b598e;
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  border: 3px solid #4b598e; 
   margin-bottom: 20px;
 }
 
 .profile-info h1 {
   font-size: 24px;
-  color: #4b598e;
-  margin: 10px 0;
+  color: #4b598e; 
+  margin: 10px 0; 
 }
 
 .profile-info p {
@@ -234,48 +270,116 @@ figcaption {
   background-color: #c0392b; 
 }
 
+
 /* //edit profile */
 .edit-profile-container {
   display: flex;
   border-radius: 10px;
-  text-align: center;
+  text-align: center; 
   justify-content: center;
   margin-top: 40px;
 }
 .edit-img img {
-  max-width: 200px;
-  border-radius: 50%;
+  max-width: 200px; 
+  border-radius: 50%; 
   border: 3px solid #4b598e;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
 }
+
 
 /* //navigation */
 .nav {
+  display: flex; 
   background-color: #4b598e; 
-  padding: 5px;
-  text-align: right; /* Align links to the right */
-  padding: 10px;
+  padding: 5px 20px; 
+  box-shadow: 0 2px 5px #0a03524b;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
+/* the page title */
+.toleft {
+  display: flex;
+  align-items: center;
+}
 
+/* other links + img */
+.toRight {
+  display: flex;
+  align-items: center; 
+  margin-left: auto;
+}
 
-.nav a {
+.toleft a, .toRight a {
   color: white;
   text-decoration: none;
+  margin: 0 5px; 
   font-weight: bold;
-  align-items: center;
-  float: right;
+ 
 }
 
-
-.nav-img{
-  max-width:2em;
-  height: auto;
-  border-radius: 50%;  
+.toleft a:hover, .toRight a:hover {
+  color: #eae2ff;
 }
 
-.toRight{
-  float: left;
+/* Profile image styling */
+.nav-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  margin-right: 30px; /* Space between image and text */
 }
 
-/* show.ejs */
+/* for smaller screens */
+@media (max-width: 600px) {
+  .nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .toleft, .toRight {
+      flex-direction: column; 
+      /* margin-bottom: 10px;  */
+  }
+}/*end of media*/
+
+
+/* Event index page */
+.event-header{
+  background-image:url("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/05/1200/675/HeavenCome3.jpg?ve=1&tl=1") ;
+  color: white;
+  text-align: center;
+}
+
+.event-header-info{
+  margin: 20px 10px;
+  float:right;
+  padding: 0 200px 0 0;
+  
+}
+
+.event-header-info > a{
+  border: 5px solid #ffffff;
+  background-color: white;
+  padding: 5px 50px;
+}
+
+h2 {
+  text-align: center; /* Center align */
+}
+
+ul {
+  list-style-type: none; 
+  
+}
+
+li {
+  background-color: white;
+  margin: 10px;
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 5px rgba(69, 56, 119, 0.667); 
+  text-align: center;
+  list-style: none;
+}
+

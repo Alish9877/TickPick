@@ -101,6 +101,25 @@ _After the user select on of the events it will show to the user this page:_
 
 ![wireframe](./wireframe.png)
 
+[Wireframe link](https://www.canva.com/design/DAGYVOanQ8A/eHEWSjQ8PFcfRaPrF6Oi4Q/edit?utm_content=DAGYVOanQ8A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
-# Tello 
-![alt text](image.png)
+# Tello
+
+**We use Tello to organize our time and to make a clear plan:**
+![todo list](image.png)
+
+[Tello link](https://trello.com/b/WtBlCk2q/tickpick)
+
+# USER TECHNOLOGY
+
+- HTML
+- JAVA SCRIPT
+- CSS
+- EJS
+- NODE.JS
+
+# NEXT STEP
+
+1. make the user can select there own site in the stadium football.
+2. make different tickets type.
+3. make the application it compilable with different type of devices.

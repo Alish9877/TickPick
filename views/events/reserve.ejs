@@ -5,18 +5,59 @@
   <link rel="stylesheet" href="../../stylesheets/style.css">
 </head>
 <body>
-<h1><%= event.eventname%></h1>
-<h2><%= event.Date%></h2>
-<button><%= event.tickCount%> Tickect lefts</button>
-<div>
-  <h1>Event Description</h1>
-  <a href="">Buy a Ticket</a> <br>
-  <a href="../">Back to the list</a><br>
-  <% if (user.role == 'admin') { %> 
-    <a href="/events/edit/<%= event._id%>">Edit event</a>
-    <%} %>
-</div>
-<div>
-</div>
+  <div class="nav">
+    <div class="toleft">
+      <a href="/categories">TickPic</a>
+    </div>
+    <div class="toRight">
+      <a href="/categories">Categories</a>
+      <a href="/events">Events</a>
+      <% if (user) { %>
+        <a href="/auth/profile">My Profile</a>
+        <a href="/auth/sign-out">Sign out</a>
+      <% } %>
+    </div>
+  </div><!-- end nav -->
+  <div class="event-info">
+    <h1><%= event.eventname%></h1>
+    <h2><%= event.Date%></h2>
+    <button><%= event.tickCount%> Tickect lefts</button>
+    <div>
+      <h1>Event Description</h1>
+      <a href="">Buy a Ticket</a> <br>
+      <br>
+      <a href="../">Back to the list</a><br>
+      <% if (user.role == 'admin') { %> 
+        <br>
+        <a href="/events/edit/<%= event._id%>">Edit event</a>
+        <%} %>
+    </div>
+  </div>
+
+
+<section class="comments-section">
+  <header>
+    <h2>Comments Section</h2>
+    <a href="/comments/my-comments" class="my-comments-link">My Comments</a>
+  </header>
+  <ul class="comments-list">
+    <% comments.forEach(comment => { %>
+    <li class="comment-item">
+      <% if (comment.userId) { %>
+      <span class="comment-author"><%= comment.userId.username %></span>:
+      <span class="comment-text"><%= comment.discription %></span>
+      <% } else { %>
+      <span class="comment-author">Unknown User</span>:
+      <span class="comment-text"><%= comment.discription %></span>
+      <% } %>
+    </li>
+    <% }); %>
+  </ul>
+  <form action="/comments" method="POST" class="add-comment">
+    <label for="discription">Comment:</label>
+    <textarea name="discription" id="discription" required></textarea>
+    <button type="submit">Add Comment</button>
+  </form>
+</section>
 </body>
 </html>

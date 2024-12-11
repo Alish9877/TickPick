@@ -646,3 +646,19 @@ textarea {
 .submit-btn:hover {
   background-color: #7287d4;
 }
+
+/* event reservejs*/
+.event-info{
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items:center ;
+}
+.event-info a{
+  background-color: #4b598e;
+  list-style: none;
+  color: white;
+  margin: 80px;
+  padding: 10px 50px;
+  border-radius: 10px;
+}

@@ -1,4 +1,4 @@
-body{
+body {
   background-color: #e9e9ef;
   color: #22177a;
   font-family: 'Poppins', sans-serif;
@@ -8,8 +8,7 @@ body{
   width: 100%;
 }
 
-a{
-
+a {
   text-decoration: none;
   font-size: 1em;
   padding: 8px 0;
@@ -18,12 +17,12 @@ a{
   text-align: center;
 }
 
-h1{
+h1 {
   text-align: center;
 }
 
 .text-container {
-  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg");
+  background-image: url('https://mir-s3-cdn-cf.behance.net/project_modules/disp/b613c488675889.5e4c0d5cb5125.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 100%;
@@ -33,7 +32,6 @@ h1{
   text-align: center;
   opacity: 0.8;
 }
-
 
 .main-header {
   display: flex;
@@ -54,7 +52,6 @@ h1{
 }
 
 .index-container {
-  
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -71,7 +68,7 @@ h1{
   height: 100%;
 }
 
-.auth-links > a{
+.auth-links > a {
   margin: 20px 10px;
   color: #ffffff;
   background-color: #605ea1;
@@ -81,14 +78,11 @@ h1{
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 
-.auth-links > a:hover{
+.auth-links > a:hover {
   background-color: #333265;
 }
-
-
 
 /* Sign-in Container */
 
@@ -105,13 +99,13 @@ h1{
 }
 
 .image-container img {
-height: 100%;
-width: auto;
-max-width: 100%;
-
+  height: 100%;
+  width: auto;
+  max-width: 100%;
 }
 
-.signin-container, .signup-container{
+.signin-container,
+.signup-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -130,10 +124,10 @@ form {
   border-radius: 20px;
   color: #4b598e;
   font-weight: bold;
-  background-color: white;  
+  background-color: white;
 }
 
-form > button{
+form > button {
   background-color: #605ea1;
   color: white;
   border: none;
@@ -143,38 +137,39 @@ form > button{
 }
 
 form > button:hover {
-  background-color: #4b4e8a; 
+  background-color: #4b4e8a;
 }
 
-input[type=text], input[type=password], input[type=url]{
+input[type='text'],
+input[type='password'],
+input[type='url'] {
   height: 2em;
-  
 }
 
 /* category page */
 /* Category list styles */
 .category-list {
-  display: flex; 
-  flex-wrap: wrap; 
-  justify-content: center; 
-  padding: 20px; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 /* Category button styles */
 .category-button {
   background-color: white;
-  border: none; 
-  border-radius: 5px; 
-  margin: 20px; 
+  border: none;
+  border-radius: 5px;
+  margin: 20px;
   cursor: pointer;
-  
+
   display: flex;
   flex-direction: column; /*important line*/
-  align-items: center;  /*important line*/
+  align-items: center; /*important line*/
   text-align: center;
-  width: 20em; 
+  width: 20em;
   height: auto;
-  box-shadow: 2px 2px 5px gray; 
+  box-shadow: 2px 2px 5px gray;
 }
 
 /* category img style */
@@ -182,14 +177,13 @@ input[type=text], input[type=password], input[type=url]{
   max-width: 100%;
   max-height: 100%;
   height: 15em;
-  
 }
 
 /* category text */
 .category-button figcaption {
   margin: 10px 0;
   font-weight: bold;
-  color:#22177a; 
+  color: #22177a;
 }
 
 /* Hover effects for buttons */
@@ -200,35 +194,34 @@ input[type=text], input[type=password], input[type=url]{
 /* for smaller screens */
 @media (max-width: 600px) {
   .category-button {
-      width: 100%; 
-      max-width: 300px;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
-
 /* //profile */
 .profile-container {
-  max-width: 600px; 
-  margin: 50px auto; 
+  max-width: 600px;
+  margin: 50px auto;
   padding: 20px;
   background-color: white;
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  text-align: center; 
+  text-align: center;
 }
 
 .profile-img img {
-  width: 150px; 
-  height: 150px; 
-  border-radius: 50%; 
-  border: 3px solid #4b598e; 
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 3px solid #4b598e;
   margin-bottom: 20px;
 }
 
 .profile-info h1 {
   font-size: 24px;
-  color: #4b598e; 
-  margin: 10px 0; 
+  color: #4b598e;
+  margin: 10px 0;
 }
 
 .profile-info p {
@@ -238,60 +231,58 @@ input[type=text], input[type=password], input[type=url]{
 
 .edit-profile {
   display: inline-block;
-  margin: 15px 0; 
-  padding: 10px 20px; 
+  margin: 15px 0;
+  padding: 10px 20px;
   background-color: #605ea1;
-  color: white; 
+  color: white;
   text-decoration: none;
-  border-radius: 5px; 
-  transition: background-color 0.3s; 
+  border-radius: 5px;
+  transition: background-color 0.3s;
   width: 80%;
 }
 
 .edit-profile:hover {
-  background-color: #4b4e8a; 
+  background-color: #4b4e8a;
 }
 
 .delete-account-form {
-  margin-top: 20px; 
+  margin-top: 20px;
 }
 
 .delete-account {
-  padding: 10px 20px; 
-  background-color: #e74c3c; 
-  color: white; 
-  border: none; 
-  border-radius: 5px; 
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
 .delete-account:hover {
-  background-color: #c0392b; 
+  background-color: #c0392b;
 }
-
 
 /* //edit profile */
 .edit-profile-container {
   display: flex;
   border-radius: 10px;
-  text-align: center; 
+  text-align: center;
   justify-content: center;
   margin-top: 40px;
 }
 .edit-img img {
-  max-width: 200px; 
-  border-radius: 50%; 
+  max-width: 200px;
+  border-radius: 50%;
   border: 3px solid #4b598e;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
-
 
 /* //navigation */
 .nav {
-  display: flex; 
-  background-color: #4b598e; 
-  padding: 5px 20px; 
+  display: flex;
+  background-color: #4b598e;
+  padding: 5px 20px;
   box-shadow: 0 2px 5px #0a03524b;
   flex-wrap: wrap;
   width: 100%;
@@ -306,19 +297,20 @@ input[type=text], input[type=password], input[type=url]{
 /* other links + img */
 .toRight {
   display: flex;
-  align-items: center; 
+  align-items: center;
   margin-left: auto;
 }
 
-.toleft a, .toRight a {
+.toleft a,
+.toRight a {
   color: white;
   text-decoration: none;
-  margin: 0 5px; 
+  margin: 0 5px;
   font-weight: bold;
- 
 }
 
-.toleft a:hover, .toRight a:hover {
+.toleft a:hover,
+.toRight a:hover {
   color: #eae2ff;
 }
 
@@ -326,39 +318,38 @@ input[type=text], input[type=password], input[type=url]{
 .nav-img {
   width: 40px;
   height: 40px;
-  border-radius: 50%; 
+  border-radius: 50%;
   margin-right: 30px; /* Space between image and text */
 }
 
 /* for smaller screens */
 @media (max-width: 600px) {
   .nav {
-      flex-direction: column;
-      align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .toleft, .toRight {
-      flex-direction: column; 
-      /* margin-bottom: 10px;  */
+  .toleft,
+  .toRight {
+    flex-direction: column;
+    /* margin-bottom: 10px;  */
   }
-}/*end of media*/
-
+} /*end of media*/
 
 /* Event index page */
-.event-header{
-  background-image:url("https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/05/1200/675/HeavenCome3.jpg?ve=1&tl=1") ;
+.event-header {
+  background-image: url('https://a57.foxnews.com/static.foxnews.com/foxnews.com/content/uploads/2019/05/1200/675/HeavenCome3.jpg?ve=1&tl=1');
   color: white;
   text-align: center;
 }
 
-.event-header-info{
+.event-header-info {
   margin: 20px 10px;
-  float:right;
+  float: right;
   padding: 0 200px 0 0;
-  
 }
 
-.event-header-info > a{
+.event-header-info > a {
   border: 5px solid #ffffff;
   background-color: white;
   padding: 5px 50px;
@@ -369,17 +360,288 @@ h2 {
 }
 
 ul {
-  list-style-type: none; 
-  
+  list-style-type: none;
 }
 
 li {
   background-color: white;
   margin: 10px;
-  padding: 20px; 
-  border-radius: 10px; 
-  box-shadow: 0 2px 5px rgba(69, 56, 119, 0.667); 
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(69, 56, 119, 0.667);
   text-align: center;
   list-style: none;
 }
+/* show.ejs */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
 
+.comments-section {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #ffffff;
+  border-left: 1px solid #ccc;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.comments-section header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.comments-section header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.comments-section header .my-comments-link {
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-size: 14px;
+}
+
+.comments-section header .my-comments-link:hover {
+  text-decoration: underline;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.comment-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.comment-text {
+  display: block;
+  margin: 5px 0;
+  color: #555;
+}
+
+.add-comment {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.add-comment label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-comment textarea {
+  resize: none;
+  width: 50;
+  height: 60px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.add-comment button {
+  background-color: #4b598e;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-comment button:hover {
+  background-color: #4b598e;
+}
+/* my-comments.ejs */
+/* Overall styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Main container */
+.comments-container {
+  width: 70%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Styling for the comment list */
+.comments-list {
+  list-style: none;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 0;
+}
+
+.comment-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  font-size: 14px;
+}
+
+.comment-item:last-child {
+  border-bottom: none;
+}
+
+/* Comment text styling */
+.comment-text {
+  flex: 1;
+  color: #555;
+}
+
+/* Styling for the edit and delete buttons */
+.edit-btn,
+.delete-btn {
+  background-color: #4b598e;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 12px;
+  transition: background-color 0.3s ease;
+  margin-left: 8px;
+}
+
+.edit-btn:hover,
+.delete-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Styling for the delete form */
+.delete-form {
+  display: inline;
+}
+
+/* Styling for when there are no comments */
+p {
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+.comment-item {
+  font-size: 13px;
+  padding: 6px;
+}
+/* edit-comments.ejs */
+/* Overall styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form container */
+.form-container {
+  width: 70%;
+  max-width: 600px;
+  margin: 20px auto;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading styling */
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Textarea styling */
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+/* Button styling */
+.submit-btn {
+  background-color: #4b598e;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  display: block;
+  width: 100%;
+}
+
+.submit-btn:hover {
+  background-color: #7287d4;
+}

@@ -28,10 +28,12 @@
     <% 
         events.sort((a, b) => new Date(a.Date) - new Date(b.Date));
       events.forEach(event => {%>
-        <li><%= event.eventname %>, <%= event.Date.toISOString().split('T')[0]%></li>
+        <li>    <a href='/events/reserve/<%= event._id %>'><%= event.eventname %>, <%= event.Date.toISOString().split('T')[0]%> , <%= event.Category%></li></a>
       <%});
     %>
 
 
 </body>
 </html>
+
+

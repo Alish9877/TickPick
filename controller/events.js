@@ -25,9 +25,10 @@ const event = await Event.findById(req.params.eventId)
 if (event.tickCount <= 0)
   return res.send('Sold out!')
 else if (event.tickCount > 0)
-  return res.send('Ticket reserved!')
+  return res.render('events/reserve.ejs')
 await event.save
 })
+
 router.get('/new' , insureadmin ,async(req,res) => {
   const user = await User.findById(req.session.user._id)
   res.render('events/new.ejs',{user})

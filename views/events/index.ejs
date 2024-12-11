@@ -21,13 +21,16 @@
   <!-- <a href="/events/new">Add Event</a>  -->
   <h2>Recent Events</h2>
     <div class="category-list">
-    <%
+    <% 
         events.sort((a, b) => new Date(a.Date) - new Date(b.Date));
       events.forEach(event => {%>
         <a href="/events/<%= event._id %>">
           <li><%= event.eventname %>, <%= event.Date.toISOString().split('T')[0]%></li></a>
+          
       <%});
     %>
     </div>
+
+
 </body>
 </html>

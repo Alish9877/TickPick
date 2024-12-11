@@ -1,6 +1,7 @@
-const router = require('express').Router();
+const router = require('express').Router()
 const insureadmin = require('../middleware/insureadmin')
-const Event = require('../models/event');
+const Category = require('../models/category')
+const Event = require('../models/event')
 const User = require('../models/user')
 const Comment = require('../models/comment')
 
@@ -23,6 +24,15 @@ console.log(event)
   return res.render('events/reserve.ejs' , {event,comments})
 })
 
+router.get('/reserved/:eventId' , async(req,res)=>{
+  const reserve = await Event.findById(req.params.eventId)
+  if  (reserve.tickCount <= 0)
+    return res.send('Sold out!')
+  else if (reserve.tickCount > 0)
+    return res.send('Ticket reserved!')
+  --tickCount
+})
+
 router.get('/new' , insureadmin ,async(req,res) => {
   const user = await User.findById(req.session.user._id)
   res.render('events/new.ejs',{user})
@@ -30,21 +40,20 @@ router.get('/new' , insureadmin ,async(req,res) => {
 
 router.post('/', insureadmin, async (req, res) => {
   try {
-    const newEvent = new Event({
+    const newEvent = new Event ({
       eventname: req.body.eventname,
       Date: req.body.Date,
       tickCount: req.body.tickCount,
-      userId: req.session.user._id,
       tickPrice: req.body.tickPrice,
       Category: req.body.Category
-    });
-    await newEvent.save();
-    res.redirect('/events');
+    })
+    await newEvent.save()
+    res.redirect('/events')
   } catch (error) {
-    console.log(error);
-    res.status(500).send('Error creating event');
+    console.log(error)
+    res.status(500).send('Error creating event')
   }
-});
+})
 
 router.get('/edit/:eventId', insureadmin  , async(req,res) => {
   const event = await Event.findById(req.params.eventId)
@@ -59,7 +68,7 @@ router.put('/edit/:eventId', insureadmin  , async(req,res) => {
         Date: req.body.Date,
         tickCount: req.body.tickCount,
         tickPrice: req.body.tickPrice,
-        Category: req.body.Category,
+        Category: req.body.Category
       })
   await event.save()
   res.redirect('/events')
@@ -69,7 +78,25 @@ catch (error) {
 }
 })
 
-router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
+router.get('/categories/:categoryName', async (req, res) => {
+ 
+  
+  try {
+    const categoryName = req.params.categoryName;
+ console.log('catName', categoryName);
+    const events = await Event.find({ Category: categoryName});
+   console.log(events , "evvvvvvvvvvvvvvvvvvvvventtt")
+    res.render('events/categories.ejs', { categoryName, events });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error fetching events for this category');
+  }
+});
+
+
+
+
+router.delete('/delete/:eventId' , insureadmin , async(req,res) => {
   try {
     await Event.findByIdAndDelete(req.params.eventId)
     Event.save()

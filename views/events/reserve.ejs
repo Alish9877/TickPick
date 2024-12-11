@@ -10,11 +10,15 @@
 <button><%= event.tickCount%> Tickect lefts</button>
 <div>
   <h1>Event Description</h1>
-  <a href="">Buy a Ticket</a> <br>
+  <a href="/events/reserved/<%=event._id%>">Buy a Ticket</a> <br>
   <a href="../">Back to the list</a><br>
   <% if (user.role == 'admin') { %> 
-    <a href="/events/edit/<%= event._id%>">Edit event</a>
+    <a href="/events/edit/<%= event._id%>">Edit event</a> <br>
+    <a href="/delete/<%= event._id %>?_method=DELETE">Delete Event</a>
     <%} %>
+
+
+
 </div>
 <div>
 </div>

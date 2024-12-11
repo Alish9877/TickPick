@@ -1,10 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Event</title>
+  <link rel="stylesheet" href="../../stylesheets/style.css">
+</head>
 <body>
-  <%- include('../partials/_navbar.ejs') %>
   <h1>Edit Event</h1>
   
   <div class="new-body">
   <form 
-    action="/events?_method=PUT"
+    action="/events/edit/<%= event._id %>?_method=PUT"
     method="POST"
   >
     <label for="eventname">name:</label>
@@ -12,7 +17,7 @@
       type="text" 
       name="eventname" 
       id="eventname" 
-      value="<%= Event.eventname %>"
+      value="<%= event.eventname %>"
     >
     <br>
     <label for="Date">Date:</label>
@@ -24,7 +29,7 @@
       type="number" 
       name="tickCount" 
       id="tickCount" 
-      value="<%= Ticket.tickCount %>"
+      value="<%= event.tickCount %>"
     >
     <br>
 
@@ -32,37 +37,37 @@
     <select id="Category" name="Category">
       <option 
         value="Books" 
-        <%= Event.Category === "Books" ? "selected" : "" %>
+        <%= event.Category === "Books" ? "selected" : "" %>
       >
         Books
       </option>
       <option 
         value="Cars" 
-        <%= Event.Category === "Cars" ? "selected" : "" %>
+        <%= event.Category === "Cars" ? "selected" : "" %>
       >
       Cars
       </option>
       <option 
         value="Music" 
-        <%= Event.Category === "Music" ? "selected" : "" %> 
+        <%= event.Category === "Music" ? "selected" : "" %> 
       >
       Music
       </option>
       <option 
         value="Festivals" 
-        <%= Event.Category === "Festivals" ? "selected" : "" %>
+        <%= event.Category === "Festivals" ? "selected" : "" %>
       >
       Festivals
       </option>
       <option
         value="Sports"
-        <%= Event.Category === "Sports" ? "selected" : "" %>
+        <%= event.Category === "Sports" ? "selected" : "" %>
       >
       Sports
       </option>
       <option
         value="Comedy"
-        <%= Event.Category === "Comedy" ? "selected" : "" %>
+        <%= event.Category === "Comedy" ? "selected" : "" %>
       >
       Comedy
       </option>
@@ -73,3 +78,4 @@
   </form>
 </div>
 </body>
+</html>

@@ -9,15 +9,15 @@
       <% comments.forEach(comment => { %>
       <li>
         <%= comment.userId.username %>: <%= comment.discription %>
-        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn"
+        <a href="/comments/my-comments/<%= comment._id %>/edit" class="edit-btn" style="background-color: rgba(0, 0, 139, 0.758); color: white; border-radius: 20%; padding: 14px 20px; font-weight: bold;"
           >Edit</a
         >
         <form
           action="/comments/my-comments/<%= comment._id %>?_method=DELETE"
           method="POST"
-          style="display: inline"
+          style="display: inline; padding:0 0 0 20px;"
         >
-          <button type="submit">Delete</button>
+          <button type="submit" style="background-color: rgba(255, 2, 2, 0.626); border-radius: 20%; padding: 10px 20px;font-weight: bold;">Delete</button>
         </form>
       </li>
 

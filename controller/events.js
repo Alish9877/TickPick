@@ -2,6 +2,7 @@ const router = require('express').Router();
 const insureadmin = require('../middleware/insureadmin')
 const Event = require('../models/event');
 const User = require('../models/user')
+const Comment=require('../models/comment')
 // const Category = require('../models/categories');
 // router.get('/events' , async (req,res) => {
 //   try { const events = await Event.find({}).populate('CategoryId')
@@ -81,5 +82,8 @@ router.delete('/events/delete/:eventId' , insureadmin , async(req,res) => {
     console.log(error)
   }
 })
+
+
+
 module.exports = router
 

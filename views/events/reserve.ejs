@@ -29,8 +29,10 @@
       <a href="../">Back to the list</a><br>
       <% if (user.role == 'admin') { %> 
         <br>
-        <a href="/events/edit/<%= event._id%>">Edit event</a>
+        <a href="/events/delete/<%= event._id%>">Edit event</a><br>
+        
         <%} %>
+        
     </div>
   </div>
 

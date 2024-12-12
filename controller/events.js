@@ -106,4 +106,19 @@ router.delete('/delete/:eventId' , insureadmin , async(req,res) => {
     console.log(error)
   }
 })
+
+router.get('/categories/:categoryName', async (req, res) => {
+  try {
+    const categoryName = req.params.categoryName;
+ console.log('catName', categoryName);
+    const events = await Event.find({ Category: categoryName});
+   
+    res.render('events/categories.ejs', { categoryName, events });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send('Error fetching events for this category');
+  }
+});
+
+
 module.exports = router

@@ -23,7 +23,7 @@ router.post('/', async (req, res) => {
       eventId: req.body.eventId
     }
     await Comment.create(newComment)
-    res.redirect('/comments')
+    // res.redirect('/events')
   } catch (error) {
     console.error(error)
     res.status(500).send('Error creating comment')

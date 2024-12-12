@@ -3,23 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="/stylesheets/style.css" />
   <title>Categories</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+
 </head>
 <body>
-
+  <div class="nav">
+    <div class="toleft">
+      <a href="/categories">TickPic</a>
+    </div>
+    <div class="toRight">
+      <a href="/events">Events</a>
+      <% if (user) { %>
+        <a href="/auth/profile">My Profile</a>
+        <a href="/auth/sign-out">Sign out</a>
+      <% } %>
+    </div>
+  </div>
   <h1>Events by Category</h1>
   <% events.forEach(category => { %>
     <div class="category">
       <ul>
-        <% 
+        <%
         events.sort((a, b) => new Date(a.Date) - new Date(b.Date));
       events.forEach(event => {%>
         <li>    <a href='/events/reserve/<%= event._id %>'><%= event.eventname %>, <%= event.Date.toISOString().split('T')[0]%> , <%= event.Category%></li></a>
       <%});
     %>
       </ul>
-      
     </div>
   <% }); %>
 </body>

@@ -20,7 +20,7 @@ const PORT = process.env.PORT ? process.env.PORT : '3000'
 
 //for style
 const path = require('path')
-app.use(express.static('public'))
+
 mongoose.connect(process.env.MONGODB_URI)
 
 mongoose.connection.on('connected', () => {
@@ -44,8 +44,8 @@ app.use(express.static('public'))
 
 app.use('/auth', authCtrl)
 app.use('/categories', isSignedIn, categoriesCtrl)
-app.use('/events', isSignedIn, eventCtrl)
-app.use('/comments', isSignedIn, commentsCtrl)
+app.use('/events', isSignedIn,eventCtrl)
+app.use('/comments', isSignedIn,commentsCtrl)
 
 // root route
 app.get('/', async (req, res) => {
@@ -59,6 +59,8 @@ app.delete('/comments/my-comments/:commentsId', async (req, res) => {
 // use controller
 app.use('/auth', authCtrl)
 app.use('/categories', categoriesCtrl)
+
+// app.use(express.static('public'));
 
 // vip lounge
 app.get('/vip-lounge', isSignedIn, (req, res) => {

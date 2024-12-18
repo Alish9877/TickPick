@@ -83,7 +83,7 @@ router.get('/categories/:categoryName', async (req, res) => {
  console.log('catName', categoryName);
     const events = await Event.find({ Category: categoryName});
    console.log(events , "evvvvvvvvvvvvvvvvvvvvventtt")
-    res.render('events/categories.ejs', { categoryName, events });
+    res.render('events/categores.ejs', { categoryName, events });
   } catch (error) {
     console.log(error);
     res.status(500).send('Error fetching events for this category');
